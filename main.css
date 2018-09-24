@@ -117,10 +117,9 @@ h1 {
 #todoFooter {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
-
-    align-items: baseline;
     
+    flex-direction: row;
+    align-items:center;
     height: 50px;
     width: 550px;
     background-color: orange;
@@ -129,13 +128,7 @@ h1 {
 }
 
 
-#clearCompleated {
-    float: right;
-}
 
-#itemsLeft {
-    float: left;
-}
 
 
 
