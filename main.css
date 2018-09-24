@@ -107,7 +107,7 @@ h1{
     outline: none;
 }
 
-.todoFooter{
+#todoFooter{
     height: 50px;
     width: 550px;
     background-color: orange;
