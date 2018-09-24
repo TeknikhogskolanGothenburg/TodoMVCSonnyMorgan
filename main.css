@@ -1,0 +1,112 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.todoApp{
+    width: 550px;
+    margin: auto;
+}
+
+h1{
+   text-align: center;
+   color: palevioletred;
+   opacity: 0.25;
+   font-size: 100px;
+   top: -155px;
+   font-weight: 100;
+   margin-bottom:20px;
+}
+
+#textboxBarHeader{
+    text-align: center;
+}
+
+#todoTextboxBar{
+    display: flex;
+    height: 65px;
+    width: 550px;
+    margin: auto;
+}
+#newTodoTextbox{
+    height: 65px;
+    width: 550px;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: italic;
+    outline: 0;
+    border: none;
+    border-style: ridge ridge ridge none;
+}
+#btnToggleAll{
+    height: 59.1px;
+    width: 50px;
+    border-style: ridge none ridge ridge;
+    background-color: white;
+    outline: none;
+}
+.infoFooter{
+    font-size: 12px;
+    opacity: 0.4;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#newTodoTextbox::placeholder{
+    color: gray;
+    opacity: 0.2;
+}
+
+#todoApp-extension{
+    text-align: center;
+}
+#todoApp-extension ul{
+    text-align: center;
+    list-style: none;
+    width: 550px;
+    height: auto;
+    margin: auto;
+    padding: 0;
+}
+#todoApp-extension ul li{
+    width: 550px;
+    height: 65px;
+}
+
+#todoApp-extension ul li div{
+    display: flex;
+    height: 65px;
+    width: 550px;
+    margin: auto;
+}
+
+#todoApp-extension ul li div checkbox{
+    height: 65px;
+    flex: 1;
+    border-style: ridge none ridge ridge;
+    background-color: white;
+    outline: none;
+}
+#todoApp-extension ul li div input{
+    height: 65px;
+    flex: 8;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: italic;
+    border-style: ridge none ridge none;
+    background-color: white;
+    outline: none;
+}
+
+#todoApp-extension ul li div button{
+    height: 65px;
+    flex: 1;
+    border-style: ridge ridge ridge none;
+    background-color: white;
+    outline: none;
+}
+
+@media (max-width: 548px){
+
+}
