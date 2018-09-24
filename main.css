@@ -111,6 +111,7 @@ h1{
     height: 50px;
     width: 550px;
     background-color: orange;
+    display: none;
 }
 
 @media (max-width: 548px){

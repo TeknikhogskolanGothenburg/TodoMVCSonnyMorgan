@@ -29,6 +29,8 @@ function createList(){
     let parent = document.querySelector("#todoApp-extension");
     let ul = document.createElement("ul");
     parent.appendChild(ul);
+    let appFooter = document.querySelector(".todoFooter");
+    appFooter.style.display = "block";
 }
 // creates li element
 function addToList(){
