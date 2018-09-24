@@ -107,6 +107,12 @@ h1{
     outline: none;
 }
 
+.todoFooter{
+    height: 50px;
+    width: 550px;
+    background-color: orange;
+}
+
 @media (max-width: 548px){
 
 }
