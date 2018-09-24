@@ -113,6 +113,9 @@ h1{
     background-color: orange;
     display: none;
 }
+td{
+    margin: auto;
+}
 
 
 @media (max-width: 548px){
