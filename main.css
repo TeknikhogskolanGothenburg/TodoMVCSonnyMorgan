@@ -88,7 +88,7 @@ h1{
     background-color: white;
     outline: none;
 }
-#todoApp-extension ul li div input{
+#todoApp-extension ul li div label{
     height: 65px;
     flex: 8;
     font-size: 24px;

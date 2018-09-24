@@ -36,12 +36,12 @@ function addToList(){
     let li = document.createElement("li");
     let div1 = document.createElement("div");
     let checkbox = document.createElement("checkbox");
-    let textbox = document.createElement("input");
+    let label = document.createElement("label");
     let button = document.createElement("button");
 
     li.appendChild(div1);
     div1.appendChild(checkbox);
-    div1.appendChild(textbox);
+    div1.appendChild(label);
     div1.appendChild(button);
     
     parent.appendChild(li);
