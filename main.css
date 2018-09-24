@@ -1,35 +1,37 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.todoApp{
+.todoApp {
     width: 550px;
     margin: auto;
 }
 
-h1{
-   text-align: center;
-   color: palevioletred;
-   opacity: 0.25;
-   font-size: 100px;
-   top: -155px;
-   font-weight: 100;
-   margin-bottom:20px;
+h1 {
+    text-align: center;
+    color: palevioletred;
+    opacity: 0.25;
+    font-size: 100px;
+    top: -155px;
+    font-weight: 100;
+    margin-bottom: 20px;
 }
 
-#textboxBarHeader{
+#textboxBarHeader {
     text-align: center;
 }
 
-#todoTextboxBar{
+#todoTextboxBar {
     display: flex;
     height: 65px;
     width: 550px;
     margin: auto;
 }
-#newTodoTextbox{
+
+#newTodoTextbox {
     height: 65px;
     width: 550px;
     font-size: 24px;
@@ -39,29 +41,32 @@ h1{
     border: none;
     border-style: ridge ridge ridge none;
 }
-#btnToggleAll{
+
+#btnToggleAll {
     height: 59.1px;
     width: 50px;
     border-style: ridge none ridge ridge;
     background-color: white;
     outline: none;
 }
-.infoFooter{
+
+.infoFooter {
     font-size: 12px;
     opacity: 0.4;
     text-align: center;
     margin-top: 40px;
 }
 
-#newTodoTextbox::placeholder{
+#newTodoTextbox::placeholder {
     color: gray;
     opacity: 0.2;
 }
 
-#todoApp-extension{
+#todoApp-extension {
     text-align: center;
 }
-#todoApp-extension ul{
+
+#todoApp-extension ul {
     text-align: center;
     list-style: none;
     width: 550px;
@@ -69,26 +74,28 @@ h1{
     margin: auto;
     padding: 0;
 }
-#todoApp-extension ul li{
+
+#todoApp-extension ul li {
     width: 550px;
     height: 65px;
 }
 
-#todoApp-extension ul li div{
+#todoApp-extension ul li div {
     display: flex;
     height: 65px;
     width: 550px;
     margin: auto;
 }
 
-#todoApp-extension ul li div checkbox{
+#todoApp-extension ul li div checkbox {
     height: 65px;
     flex: 1;
     border-style: ridge none ridge ridge;
     background-color: white;
     outline: none;
 }
-#todoApp-extension ul li div label{
+
+#todoApp-extension ul li div label {
     height: 65px;
     flex: 8;
     font-size: 24px;
@@ -99,7 +106,7 @@ h1{
     outline: none;
 }
 
-#todoApp-extension ul li div button{
+#todoApp-extension ul li div button {
     height: 65px;
     flex: 1;
     border-style: ridge ridge ridge none;
@@ -107,17 +114,22 @@ h1{
     outline: none;
 }
 
-#todoFooter{
+#todoFooter {
+    display: flex;
+    justify-content: space-between;
+    
+    flex-direction: row;
+    align-items:center;
     height: 50px;
     width: 550px;
     background-color: orange;
-    display: none;
-}
-td{
-    margin: auto;
+    display: true;
+
 }
 
 
-@media (max-width: 548px){
 
-}
+
+
+
+@media (max-width: 548px) {}
