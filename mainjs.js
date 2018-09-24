@@ -2,6 +2,7 @@
 let toggleAll = document.querySelector("#btnToggleAll");
 
 textBoxEventListener();
+// removeButtonEventListener();
 
 
 // function adds eventlistener to the textbox enter keypress event
@@ -40,6 +41,10 @@ function addToList(){
     let checkbox = document.createElement("checkbox");
     let label = document.createElement("label");
     let button = document.createElement("button");
+    let textbox = document.querySelector("#newTodoTextbox");
+    label.textContent = textbox.value;
+    li.className = "listItem";
+    
 
     li.appendChild(div1);
     div1.appendChild(checkbox);
@@ -48,3 +53,20 @@ function addToList(){
     
     parent.appendChild(li);
 }
+/*
+function removeButtonEventListener(){
+    let buttonList = Array.from(document.querySelectorAll("#todoApp-extension ul li div button"));
+    let remove = document.querySelector(".listItem");
+
+    for(i = 0; i < buttonList.length; i++){
+        buttonList[i].addEventListener("click", event =>{
+            remove[0].parentNode.removeChild(remove);
+        });
+    }
+}
+
+function removeFromList(){
+    let button = document.querySelector("#todoApp-extension ul li div button");
+
+}
+*/
