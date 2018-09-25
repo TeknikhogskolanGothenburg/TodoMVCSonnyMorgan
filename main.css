@@ -115,16 +115,14 @@ h1 {
 }
 
 #todoFooter {
-    display: flex;
-    justify-content: space-between;
-    
-    flex-direction: row;
-    align-items:center;
     height: 50px;
     width: 550px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items:center;
     background-color: orange;
     display: true;
-
 }
 
 
