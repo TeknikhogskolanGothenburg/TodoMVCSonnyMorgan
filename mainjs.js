@@ -1,4 +1,3 @@
-
 // creates ul element
 function createList() {
     let parent = document.querySelector("#todoApp-extension");
@@ -17,13 +16,13 @@ function addToList() {
     let label = document.createElement("label");
     let button = document.createElement("input");
     let textbox = document.querySelector("#newTodoTextbox");
-    button.type="button";
-    button.value="X";
-    button.className="deleteButton";
-    checkbox.type="checkbox";
+    button.type = "button";
+    button.value = "X";
+    button.className = "deleteButton";
+    checkbox.type = "checkbox";
     checkbox.checked = false;
-    checkbox.className ="checkboxes";
-    
+    checkbox.className = "checkboxes";
+
     label.textContent = textbox.value;
     li.className = "listItem";
 
@@ -37,28 +36,26 @@ function addToList() {
 }
 
 
-function toggleAllButtonEventListener(){
+function toggleAllButtonEventListener() {
     let toggleAll = document.querySelector("#btnToggleAll");
-    
-    toggleAll.addEventListener("click", event =>{
+
+    toggleAll.addEventListener("click", event => {
         let checkAllStatus = false;
         let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
-        for(i = 0; i < checkboxes.length; i++){
-        if(checkboxes[i].checked == true){
-            checkAllStatus = true;
-        }
-        else{
-            checkAllStatus = false;
-            break;
-        }
-        }
-        if(checkAllStatus == true){
-            for(i = 0; i < checkboxes.length; i++){
-                checkboxes[i].checked = false;
+        for (i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked == true) {
+                checkAllStatus = true;
+            } else {
+                checkAllStatus = false;
+                break;
             }
         }
-        else{
-            for(i = 0; i < checkboxes.length; i++){
+        if (checkAllStatus == true) {
+            for (i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        } else {
+            for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = true;
             }
         }
