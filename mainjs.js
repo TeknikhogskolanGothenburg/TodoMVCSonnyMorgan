@@ -43,6 +43,7 @@ function addToList() {
     let textbox = document.querySelector("#newTodoTextbox");
     button.type="button";
     button.value="X";
+    button.className="deleteButton";
     checkbox.type="checkbox";
     checkbox.value="value";
     
