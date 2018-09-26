@@ -41,6 +41,8 @@ function addToList() {
     let label = document.createElement("label");
     let button = document.createElement("button");
     let textbox = document.querySelector("#newTodoTextbox");
+   
+   
     checkbox.type="checkbox";
     checkbox.value="value";
     
