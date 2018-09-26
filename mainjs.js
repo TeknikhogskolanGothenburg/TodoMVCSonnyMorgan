@@ -41,11 +41,13 @@ function addToList() {
     let label = document.createElement("label");
     let button = document.createElement("button");
     let textbox = document.querySelector("#newTodoTextbox");
-   
+    let deleteBox = document.createElement('input');
    
     checkbox.type="checkbox";
     checkbox.value="value";
     
+    deleteBox.type="checkbox";
+    deleteBox.value="value";
     
     label.textContent = textbox.value;
     li.className = "listItem";
@@ -55,7 +57,7 @@ function addToList() {
     div1.appendChild(checkbox);
     div1.appendChild(label);
     div1.appendChild(button);
-
+    div1.appendChild(deleteBox);
     parent.appendChild(li);
     textbox.value = "";
 }
