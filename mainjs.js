@@ -15,7 +15,7 @@ function addToList() {
     let div1 = document.createElement("div");
     let checkbox = document.createElement('input');
     let label = document.createElement("label");
-    let button = document.createElement("button");
+    let button = document.createElement("input");
     let textbox = document.querySelector("#newTodoTextbox");
    
     checkbox.type="checkbox";
