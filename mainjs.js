@@ -23,6 +23,7 @@ function textBoxEventListener(){
             }
         }
         });
+        
 }
 
 // creates ul element
@@ -52,6 +53,7 @@ function addToList(){
     div1.appendChild(button);
     
     parent.appendChild(li);
+    textbox.value = "";
 }
 /*
 function removeButtonEventListener(){
