@@ -73,8 +73,10 @@ function textBoxEventListener() {
             if (ulExists == null) {
                 createList();
                 addToList();
+                removeButtonEventListener();
             } else {
                 addToList();
+                removeButtonEventListener();
             }
         }
     });
@@ -103,6 +105,23 @@ function allButtonEventListener(){
     for(i = 0; i < allList.length; i++){
         allList[i].parentNode.parentNode.style.display = "block";
     }
+    });
+}
+
+// remove button in the list functionality
+function removeButtonEventListener(){
+    let ul = document.querySelector("ul");
+
+    // add eventlister to <ul> and add some event delegation
+    // event.target is the child element that triggered the event <li> in the case of a <ul>
+    // make sure the clicked element in the <li> is a button
+    // delete <li> based off of the event.target
+    ul.addEventListener("click", event=>{
+        let selectedElementTagName = event.target.tagName;
+        let selectedElement = event.target;
+        if(selectedElementTagName == "INPUT" && selectedElement.type == "button"){
+            selectedElement.parentNode.parentNode.parentNode.removeChild(selectedElement.parentNode.parentNode);
+        }
     });
 }
 
