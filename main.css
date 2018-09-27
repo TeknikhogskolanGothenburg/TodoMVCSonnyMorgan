@@ -134,7 +134,10 @@ h1 {
 
 
 input[type="checkbox"] {
-    margin: 20px;
+   width:60px ;
+   height: 60px;
+   float: left;
+  
 }
 
 input:checked+label {
