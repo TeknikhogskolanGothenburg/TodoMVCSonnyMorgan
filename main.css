@@ -8,6 +8,7 @@ body {
 .todoApp {
     width: 550px;
     margin: auto;
+  
 }
 
 h1 {
@@ -27,26 +28,24 @@ h1 {
 #todoTextboxBar {
     display: flex;
     height: 65px;
-    width: 550px;
-    margin: auto;
+    width: 540px;
+    margin: 10px;
 }
 
 #newTodoTextbox {
-    height: 65px;
+    height: 59.1px;
     width: 550px;
     font-size: 24px;
     font-weight: normal;
     font-style: italic;
     outline: 0;
     border: none;
-    border-style: ridge ridge ridge none;
+    
 }
 
 #btnToggleAll {
     height: 59.1px;
     width: 50px;
-    border-style: ridge none ridge ridge;
-   
     outline: none;
 }
 
@@ -90,7 +89,7 @@ h1 {
 #todoApp-extension ul li div checkbox {
     height: 65px;
     flex: 1;
-    border-style: ridge none ridge ridge;
+    
     
     outline: none;
 }
@@ -101,7 +100,7 @@ h1 {
     font-size: 24px;
     font-weight: normal;
     font-style: italic;
-    border-style: ridge none ridge none;
+
    
     outline: none;
 }
@@ -109,7 +108,7 @@ h1 {
 #todoApp-extension ul li div button {
     height: 65px;
     flex: 1;
-    border-style: ridge ridge ridge none;
+    
     
     outline: none;
 }
@@ -145,9 +144,7 @@ input:checked+label {
     color:grey;
     background-color:lightgrey;
 }
-input:checked + .listItem{
-    background-color: red;
-}
+
 
 
 @media (max-width: 548px) {}
