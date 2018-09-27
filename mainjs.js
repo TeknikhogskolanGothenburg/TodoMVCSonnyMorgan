@@ -92,14 +92,21 @@ function activeButtonEventListener(){
           activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
         }
     }
-    
-
     });
-
 }
 
-
+// all button in the footer functionality
+function allButtonEventListener(){
+    let all = document.querySelector("#all");
+    all.addEventListener("click", event =>{
+    let allList = Array.from(document.querySelectorAll(".checkboxes"));
+    for(i = 0; i < allList.length; i++){
+        allList[i].parentNode.parentNode.style.display = "block";
+    }
+    });
+}
 
 textBoxEventListener();
 toggleAllButtonEventListener();
 activeButtonEventListener();
+allButtonEventListener();
