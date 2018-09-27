@@ -106,6 +106,21 @@ function allButtonEventListener(){
     });
 }
 
+
+function inActiveButtonEventListener(){
+    let active = document.querySelector("#completed");
+    active.addEventListener("click", event =>{
+    let activeList = Array.from(document.querySelectorAll(".checkboxes"));
+    for(i = 0; i < activeList.length; i++){
+        if(activeList[i].checked == false){
+            // commented line below is for deleting the <li> rather than just hiding
+          // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
+          activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+        }
+    }
+    });
+}
+inActiveButtonEventListener();
 textBoxEventListener();
 toggleAllButtonEventListener();
 activeButtonEventListener();
