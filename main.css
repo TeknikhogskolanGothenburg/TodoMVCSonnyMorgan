@@ -46,7 +46,7 @@ h1 {
     height: 59.1px;
     width: 50px;
     border-style: ridge none ridge ridge;
-    background-color: white;
+   
     outline: none;
 }
 
@@ -91,7 +91,7 @@ h1 {
     height: 65px;
     flex: 1;
     border-style: ridge none ridge ridge;
-    background-color: white;
+    
     outline: none;
 }
 
@@ -102,7 +102,7 @@ h1 {
     font-weight: normal;
     font-style: italic;
     border-style: ridge none ridge none;
-    background-color: white;
+   
     outline: none;
 }
 
@@ -110,7 +110,7 @@ h1 {
     height: 65px;
     flex: 1;
     border-style: ridge ridge ridge none;
-    background-color: white;
+    
     outline: none;
 }
 
@@ -120,16 +120,31 @@ h1 {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items:center;
-    background-color: orange;
+    align-items: center;
+    
     display: true;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    
 }
 
 
 
-input:checked + label {
-    background:#F9F9F9;
+input[type="checkbox"] {
+    margin: 20px;
+}
+
+input:checked+label {
     text-decoration: line-through;
-  }
+    color:grey;
+    background-color:lightgrey;
+}
+input:checked + .listItem{
+    background-color: red;
+}
+
 
 @media (max-width: 548px) {}
