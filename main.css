@@ -161,6 +161,12 @@ label:hover + input.deleteButton{
 input.deleteButton:hover{
     display:block;
 }
-
+li.listItem{
+    border-bottom:2px solid rgba(14, 124, 124, 0.1) ;
+    
+}
+ul > li:nth-child(1){
+    border-top:2px solid rgba(14, 124, 124, 0.1) ;
+}
 
 @media (max-width: 548px) {}
