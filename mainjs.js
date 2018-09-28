@@ -4,9 +4,9 @@ function createList() {
     let ul = document.createElement("ul");
     parent.appendChild(ul);
     let appFooter = document.querySelector("#todoFooter");
-    appFooter.style.display = "block";
+   // appFooter.style.display = "block";
     appFooter.style.display = "flex";
-
+    
     
 }
 

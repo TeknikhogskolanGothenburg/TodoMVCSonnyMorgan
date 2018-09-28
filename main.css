@@ -110,13 +110,12 @@ h1 {
 
 
 #todoFooter {
-   
+   display: flex;
+   justify-content: center;
     display: none;
    
     
 }
-
-
 
 input[type="checkbox"] {
    width:60px ;
