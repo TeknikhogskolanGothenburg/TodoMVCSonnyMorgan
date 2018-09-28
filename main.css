@@ -3,11 +3,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+        background:lightblue;
+      
 }
 
 .todoApp {
     width: 550px;
     margin: auto;
+    background:white;
+    border-radius:5px;
+    box-shadow:10px 10px 0 rgba(14, 124, 124, 0.1);
+
   
 }
 
