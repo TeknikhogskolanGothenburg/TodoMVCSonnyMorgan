@@ -27,6 +27,7 @@ function addToList() {
     checkbox.className = "checkboxes";
 
     label.textContent = textbox.value;
+    
     li.className = "listItem";
 
     li.appendChild(div1);
@@ -70,18 +71,23 @@ function textBoxEventListener() {
     let textBox = document.querySelector("#newTodoTextbox");
 
     textBox.addEventListener("keypress", event => {
-        var key = event.which || event.keyCode;
-        if (key == 13) {
-            let ulExists = document.querySelector("#todoApp-extension ul");
-            if (ulExists == null) {
-                createList();
-                addToList();
-                removeButtonEventListener();
-            } else {
-                addToList();
-                removeButtonEventListener();
-            }
-        }
+        // make sure you cant add empty string to list
+        // use !! boolean conversion to achieve this
+        // essentially means convert to boolean then set false then back to true
+        if(textBox.value != !!textBox.value.trim()){
+            var key = event.which || event.keyCode;
+            if (key == 13) {
+                let ulExists = document.querySelector("#todoApp-extension ul");
+                if (ulExists == null) {
+                    createList();
+                    addToList();
+                    removeButtonEventListener();
+                } else {
+                    addToList();
+                    removeButtonEventListener();
+                }            
+            }   
+        }    
     });
 
 }
