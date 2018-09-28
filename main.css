@@ -120,8 +120,7 @@ h1 {
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    
-    display: true;
+    display: none;
 }
 
 .listItem {
@@ -129,6 +128,7 @@ h1 {
     align-items: center;
     
 }
+
 
 
 
@@ -145,6 +145,16 @@ input:checked+label {
     background-color:lightgrey;
 }
 
+input.deleteButton{
+    display: none;
+}
+
+label:hover + input.deleteButton{
+    display: block;
+}
+input.deleteButton:hover{
+    display:block;
+}
 
 
 @media (max-width: 548px) {}
