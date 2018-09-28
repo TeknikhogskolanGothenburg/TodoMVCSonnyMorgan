@@ -95,8 +95,6 @@ h1 {
 #todoApp-extension ul li div checkbox {
     height: 65px;
     flex: 1;
-    
-    
     outline: none;
 }
 
@@ -106,35 +104,17 @@ h1 {
     font-size: 24px;
     font-weight: normal;
     font-style: italic;
-
-   
     outline: none;
 }
 
-#todoApp-extension ul li div button {
-    height: 65px;
-    flex: 1;
-    
-    
-    outline: none;
-}
+
 
 #todoFooter {
-    height: 50px;
-    width: 550px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
+   
     display: none;
-}
-
-.listItem {
-    display: flex;
-    align-items: center;
+   
     
 }
-
 
 
 
@@ -165,8 +145,10 @@ li.listItem{
     border-bottom:2px solid rgba(14, 124, 124, 0.1) ;
     
 }
+
 ul > li:nth-child(1){
     border-top:2px solid rgba(14, 124, 124, 0.1) ;
 }
+
 
 @media (max-width: 548px) {}

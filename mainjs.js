@@ -5,6 +5,9 @@ function createList() {
     parent.appendChild(ul);
     let appFooter = document.querySelector("#todoFooter");
     appFooter.style.display = "block";
+    appFooter.style.display = "flex";
+
+    
 }
 
 // creates li element
