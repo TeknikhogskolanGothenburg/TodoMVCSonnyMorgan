@@ -102,6 +102,9 @@ function activeButtonEventListener(){
           // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
           activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
         }
+        else{
+          activeList[i].parentNode.parentNode.style.display = "block";  
+        }
     }
     });
 }
@@ -136,15 +139,18 @@ function removeButtonEventListener(){
 
 
 function inActiveButtonEventListener(){
-    let active = document.querySelector("#completed");
-    active.addEventListener("click", event =>{
-    let activeList = Array.from(document.querySelectorAll(".checkboxes"));
-    for(i = 0; i < activeList.length; i++){
-        if(activeList[i].checked == false){
+    let inActive = document.querySelector("#completed");
+    inActive.addEventListener("click", event =>{
+    let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
+    for(i = 0; i < inActiveList.length; i++){
+        if(inActiveList[i].checked == false){
             // commented line below is for deleting the <li> rather than just hiding
           // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
-          activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+          inActiveList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
         }
+        else{
+            inActiveList[i].parentNode.parentNode.style.display = "block";  
+          }
     }
     });
 }
