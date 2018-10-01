@@ -72,7 +72,6 @@ h1 {
 }
 
 #todoApp-extension ul {
-    text-align: center;
     list-style: none;
     width: 550px;
     height: auto;
@@ -105,6 +104,8 @@ h1 {
     font-weight: normal;
     font-style: italic;
     outline: none;
+    text-align: left;
+   
 }
 
 
@@ -133,6 +134,7 @@ input:checked+label {
 input.deleteButton{
     display: none;
 }
+
 
 label:hover + input.deleteButton{
     display: block;
