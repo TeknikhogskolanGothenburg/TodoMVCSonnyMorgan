@@ -46,7 +46,7 @@ h1 {
     font-style: italic;
     outline: 0;
     border: none;
-    padding-left: 40px;
+    padding-left: 82px;
     
 }
 
@@ -54,6 +54,7 @@ h1 {
     height: 59.1px;
     width: 50px;
     outline: none;
+    display: none;
 }
 
 .infoFooter {

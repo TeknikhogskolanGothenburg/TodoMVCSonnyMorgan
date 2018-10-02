@@ -6,8 +6,9 @@ function createList() {
     let appFooter = document.querySelector("#todoFooter");
    // appFooter.style.display = "block";
     appFooter.style.display = "flex";
-    
-    
+    let toggleAll = document.querySelector("#btnToggleAll");
+    toggleAll.style.display = "block";
+    let textBox = document.querySelector("#btnToggleAll");
 }
 
 // creates li element
@@ -89,9 +90,11 @@ function textBoxEventListener() {
                     createList();
                     addToList();
                     removeButtonEventListener();
+                    textBox.style.paddingLeft = "40px";
                 } else {
                     addToList();
                     removeButtonEventListener();
+                    textBox.style.paddingLeft = "40px";
                 }            
             }   
         }    
@@ -130,6 +133,8 @@ function allButtonEventListener(){
 // remove button in the list functionality
 function removeButtonEventListener(){
     let ul = document.querySelector("ul");
+    let ulParent = document.querySelector("#todoApp-extension");
+    
 
     // add eventlister to <ul> and add some event delegation
     // event.target is the child element that triggered the event <li> in the case of a <ul>
@@ -138,10 +143,27 @@ function removeButtonEventListener(){
     ul.addEventListener("click", event=>{
         let selectedElementTagName = event.target.tagName;
         let selectedElement = event.target;
+        
         if(selectedElementTagName == "INPUT" && selectedElement.type == "button"){
+            
             selectedElement.parentNode.parentNode.parentNode.removeChild(selectedElement.parentNode.parentNode);
+            let listExists = Array.from(document.querySelectorAll("li"));
+            if(listExists.length <= 0){                          
+               let parent = document.querySelector("#todoApp-extension");
+               parent.removeChild(ul);
+               let toggleAll = document.querySelector("#btnToggleAll");
+               toggleAll.style.display = "none";
+               let footer = document.querySelector("#todoFooter");
+               footer.style.display = "none";
+               let textBox = document.querySelector("#newTodoTextbox");
+               textBox.style.paddingLeft = "82px";
+            }
+            
         }
+        
     });
+    
+    
 }
 
 
