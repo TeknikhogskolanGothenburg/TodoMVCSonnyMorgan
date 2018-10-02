@@ -195,11 +195,12 @@ function deleteInActiveButtonEventListener() {
         }
     });
 }
-const wholeAppArea = document.querySelectorAll('.todoApp')
 
+//counts items left
+const wholeAppArea = document.querySelectorAll('.todoApp')
 function handleUpdate() {
-    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
     const lableForResult = document.querySelector("#itemsLeft")
+    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
     let result = 0;
     for (i = 0; i < activeList.length; i++) {
         if (activeList[i].checked == false) {
@@ -209,8 +210,8 @@ function handleUpdate() {
     console.log(result);
     lableForResult.textContent = result +" items left";
 }
-    wholeAppArea.forEach(area => area.addEventListener('click', handleUpdate));
-    
+wholeAppArea.forEach(area => area.addEventListener('click', handleUpdate));
+
     deleteInActiveButtonEventListener();
     inActiveButtonEventListener();
     textBoxEventListener();
