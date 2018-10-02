@@ -198,7 +198,6 @@ function deleteInActiveButtonEventListener(){
     });
 }
 
-
 deleteInActiveButtonEventListener();
 inActiveButtonEventListener();
 textBoxEventListener();
