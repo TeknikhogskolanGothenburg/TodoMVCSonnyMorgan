@@ -4,7 +4,7 @@ function createList() {
     let ul = document.createElement("ul");
     parent.appendChild(ul);
     let appFooter = document.querySelector("#todoFooter");
-   // appFooter.style.display = "block";
+    // appFooter.style.display = "block";
     appFooter.style.display = "flex";
     let toggleAll = document.querySelector("#btnToggleAll");
     toggleAll.style.display = "block";
@@ -30,12 +30,12 @@ function addToList() {
     let newListContent = textbox.value;
     let result = "";
     while (newListContent.length > 0) {
-    result += newListContent.substring(0, 30) + '\n';
-    newListContent = newListContent.substring(30);
+        result += newListContent.substring(0, 30) + '\n';
+        newListContent = newListContent.substring(30);
     }
 
     label.textContent = result;
-    
+
     li.className = "listItem";
 
     li.appendChild(div1);
@@ -82,7 +82,7 @@ function textBoxEventListener() {
         // make sure you cant add empty string to list
         // use !! boolean conversion to achieve this
         // essentially means convert to boolean then set false then back to true
-        if(textBox.value != !!textBox.value.trim()){
+        if (textBox.value != !!textBox.value.trim()) {
             var key = event.which || event.keyCode;
             if (key == 13) {
                 let ulExists = document.querySelector("#todoApp-extension ul");
@@ -95,112 +95,125 @@ function textBoxEventListener() {
                     addToList();
                     removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
-                }            
-            }   
-        }    
+                }
+            }
+        }
     });
 
 }
 
-function activeButtonEventListener(){
+function activeButtonEventListener() {
     let active = document.querySelector("#active");
-    active.addEventListener("click", event =>{
-    let activeList = Array.from(document.querySelectorAll(".checkboxes"));
-    for(i = 0; i < activeList.length; i++){
-        if(activeList[i].checked == true){
-            // commented line below is for deleting the <li> rather than just hiding
-          // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
-          activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+    active.addEventListener("click", event => {
+        let activeList = Array.from(document.querySelectorAll(".checkboxes"));
+        for (i = 0; i < activeList.length; i++) {
+            if (activeList[i].checked == true) {
+                // commented line below is for deleting the <li> rather than just hiding
+                // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
+                activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+            } else {
+                activeList[i].parentNode.parentNode.style.display = "block";
+            }
         }
-        else{
-          activeList[i].parentNode.parentNode.style.display = "block";  
-        }
-    }
     });
 }
 
 // all button in the footer functionality
-function allButtonEventListener(){
+function allButtonEventListener() {
     let all = document.querySelector("#all");
-    all.addEventListener("click", event =>{
-    let allList = Array.from(document.querySelectorAll(".checkboxes"));
-    for(i = 0; i < allList.length; i++){
-        allList[i].parentNode.parentNode.style.display = "block";
-    }
+    all.addEventListener("click", event => {
+        let allList = Array.from(document.querySelectorAll(".checkboxes"));
+        for (i = 0; i < allList.length; i++) {
+            allList[i].parentNode.parentNode.style.display = "block";
+        }
     });
 }
 
 // remove button in the list functionality
-function removeButtonEventListener(){
+function removeButtonEventListener() {
     let ul = document.querySelector("ul");
     let ulParent = document.querySelector("#todoApp-extension");
-    
+
 
     // add eventlister to <ul> and add some event delegation
     // event.target is the child element that triggered the event <li> in the case of a <ul>
     // make sure the clicked element in the <li> is a button
     // delete <li> based off of the event.target
-    ul.addEventListener("click", event=>{
+    ul.addEventListener("click", event => {
         let selectedElementTagName = event.target.tagName;
         let selectedElement = event.target;
-        
-        if(selectedElementTagName == "INPUT" && selectedElement.type == "button"){
-            
+
+        if (selectedElementTagName == "INPUT" && selectedElement.type == "button") {
+
             selectedElement.parentNode.parentNode.parentNode.removeChild(selectedElement.parentNode.parentNode);
             let listExists = Array.from(document.querySelectorAll("li"));
-            if(listExists.length <= 0){                          
-               let parent = document.querySelector("#todoApp-extension");
-               parent.removeChild(ul);
-               let toggleAll = document.querySelector("#btnToggleAll");
-               toggleAll.style.display = "none";
-               let footer = document.querySelector("#todoFooter");
-               footer.style.display = "none";
-               let textBox = document.querySelector("#newTodoTextbox");
-               textBox.style.paddingLeft = "82px";
+            if (listExists.length <= 0) {
+                let parent = document.querySelector("#todoApp-extension");
+                parent.removeChild(ul);
+                let toggleAll = document.querySelector("#btnToggleAll");
+                toggleAll.style.display = "none";
+                let footer = document.querySelector("#todoFooter");
+                footer.style.display = "none";
+                let textBox = document.querySelector("#newTodoTextbox");
+                textBox.style.paddingLeft = "82px";
             }
-            
+
         }
-        
+
     });
-    
-    
+
+
 }
 
 
-function inActiveButtonEventListener(){
+function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
-    inActive.addEventListener("click", event =>{
-    let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
-    for(i = 0; i < inActiveList.length; i++){
-        if(inActiveList[i].checked == false){
-            // commented line below is for deleting the <li> rather than just hiding
-          // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
-          inActiveList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+    inActive.addEventListener("click", event => {
+        let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
+        for (i = 0; i < inActiveList.length; i++) {
+            if (inActiveList[i].checked == false) {
+                // commented line below is for deleting the <li> rather than just hiding
+                // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
+                inActiveList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+            } else {
+                inActiveList[i].parentNode.parentNode.style.display = "block";
+            }
         }
-        else{
-            inActiveList[i].parentNode.parentNode.style.display = "block";  
-          }
-    }
     });
 }
 
-function deleteInActiveButtonEventListener(){
+function deleteInActiveButtonEventListener() {
     let active = document.querySelector("#clearCompleted");
-    active.addEventListener("click", event =>{
-    let activeList = Array.from(document.querySelectorAll(".checkboxes"));
-    for(i = 0; i < activeList.length; i++){
-        if(activeList[i].checked == true){
-            // commented line below is for deleting the <li> rather than just hiding
-          activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
-          //activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+    active.addEventListener("click", event => {
+        let activeList = Array.from(document.querySelectorAll(".checkboxes"));
+        for (i = 0; i < activeList.length; i++) {
+            if (activeList[i].checked == true) {
+                // commented line below is for deleting the <li> rather than just hiding
+                activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
+                //activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+            }
         }
-    }
     });
 }
+const wholeAppArea = document.querySelectorAll('.todoApp')
 
-deleteInActiveButtonEventListener();
-inActiveButtonEventListener();
-textBoxEventListener();
-toggleAllButtonEventListener();
-activeButtonEventListener();
-allButtonEventListener();
+function handleUpdate() {
+    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
+    const lableForResult = document.querySelector("#itemsLeft")
+    let result = 0;
+    for (i = 0; i < activeList.length; i++) {
+        if (activeList[i].checked == false) {
+            result++;
+        }
+    }
+    console.log(result);
+    lableForResult.textContent = result +" items left";
+}
+    wholeAppArea.forEach(area => area.addEventListener('click', handleUpdate));
+    
+    deleteInActiveButtonEventListener();
+    inActiveButtonEventListener();
+    textBoxEventListener();
+    toggleAllButtonEventListener();
+    activeButtonEventListener();
+    allButtonEventListener();
