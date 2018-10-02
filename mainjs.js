@@ -198,6 +198,7 @@ function deleteInActiveButtonEventListener() {
 
 //counts items left
 const wholeAppArea = document.querySelectorAll('.todoApp')
+
 function handleUpdate() {
     const lableForResult = document.querySelector("#itemsLeft")
     const activeList = Array.from(document.querySelectorAll(".checkboxes"));
@@ -208,13 +209,13 @@ function handleUpdate() {
         }
     }
     console.log(result);
-    lableForResult.textContent = result +" items left";
+    lableForResult.textContent = `${result} items left`;
 }
 wholeAppArea.forEach(area => area.addEventListener('click', handleUpdate));
 
-    deleteInActiveButtonEventListener();
-    inActiveButtonEventListener();
-    textBoxEventListener();
-    toggleAllButtonEventListener();
-    activeButtonEventListener();
-    allButtonEventListener();
+deleteInActiveButtonEventListener();
+inActiveButtonEventListener();
+textBoxEventListener();
+toggleAllButtonEventListener();
+activeButtonEventListener();
+allButtonEventListener();
