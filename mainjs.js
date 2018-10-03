@@ -1,3 +1,5 @@
+var filter = "All";
+
 // creates ul element
 function createList() {
     let parent = document.querySelector("#todoApp-extension");
@@ -92,10 +94,12 @@ function textBoxEventListener() {
                     createList();
                     addToList();
                     removeButtonEventListener();
+                    checkBoxEventListener();
                     textBox.style.paddingLeft = "40px";
                 } else {
                     addToList();
                     removeButtonEventListener();
+                    checkBoxEventListener();
                     textBox.style.paddingLeft = "40px";
                 }
             }
@@ -107,6 +111,7 @@ function textBoxEventListener() {
 function activeButtonEventListener() {
     let active = document.querySelector("#active");
     active.addEventListener("click", event => {
+        filter = "Active";
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
             if (activeList[i].checked == true) {
@@ -117,13 +122,15 @@ function activeButtonEventListener() {
                 activeList[i].parentNode.parentNode.style.display = "block";
             }
         }
+        
     });
 }
 
 // all button in the footer functionality
-function allButtonEventListener() {
+function allButtonEventListener() {   
     let all = document.querySelector("#all");
     all.addEventListener("click", event => {
+        filter = "All";
         let allList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < allList.length; i++) {
             allList[i].parentNode.parentNode.style.display = "block";
@@ -167,9 +174,10 @@ function removeButtonEventListener() {
 }
 
 
-function inActiveButtonEventListener() {
+function inActiveButtonEventListener() {  
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
+        filter = "Completed";
         let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < inActiveList.length; i++) {
             if (inActiveList[i].checked == false) {
@@ -222,6 +230,27 @@ function itemsLefteventListener() {
     }));
 }
 
+function checkBoxEventListener(){
+    let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
+    for(i = 0; i < checkboxes.length; i++){
+        checkboxes[i].addEventListener("click", event=>{
+            if(filter == "All"){
+                let all = document.querySelector("#all");
+                all.click();
+            }
+            else if(filter == "Active"){
+                let active = document.querySelector("#active");
+                active.click();
+            }
+            else if(filter == "Completed"){
+                let completed = document.querySelector("#completed");
+                completed.click();
+            }
+        });
+    }
+}
+
+
 function toggleVisibilityClearCompleteButton(checkedBoxes){
     const clearCompleted = document.querySelector("#clearCompleted");
     if (checkedBoxes==0) {
@@ -230,6 +259,7 @@ function toggleVisibilityClearCompleteButton(checkedBoxes){
         clearCompleted.style.display = "flex";
     }
 }
+
 
 
 itemsLefteventListener();
