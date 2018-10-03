@@ -197,22 +197,27 @@ function deleteInActiveButtonEventListener() {
 }
 
 //counts items left
-const wholeAppArea = document.querySelectorAll('.todoApp')
 
-function handleUpdate() {
-    const lableForResult = document.querySelector("#itemsLeft")
-    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
-    let result = 0;
-    for (i = 0; i < activeList.length; i++) {
-        if (activeList[i].checked == false) {
-            result++;
+
+function itemsLefteventListener(){
+    
+    const wholeAppArea = document.querySelectorAll('.todoApp');
+    wholeAppArea.forEach(area => area.addEventListener('click',()=>{
+        const lableForResult = document.querySelector("#itemsLeft");
+        const activeList = Array.from(document.querySelectorAll(".checkboxes"));
+        let result = 0;
+        for (i = 0; i < activeList.length; i++) {
+            if (activeList[i].checked == false) {
+                result++;
+            }
         }
-    }
-    console.log(result);
-    lableForResult.textContent = `${result} items left`;
+        console.log(result);
+        lableForResult.textContent = `${result} items left`;
+        
+}));
 }
-wholeAppArea.forEach(area => area.addEventListener('click', handleUpdate));
 
+itemsLefteventListener();
 deleteInActiveButtonEventListener();
 inActiveButtonEventListener();
 textBoxEventListener();
