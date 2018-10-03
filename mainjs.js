@@ -218,11 +218,11 @@ function itemsLefteventListener() {
             }
         }
         lableForResult.textContent = `${result} items left`;
-        toggleClearCompleteButton(checkedBoxes);       
+        toggleVisibilityClearCompleteButton(checkedBoxes);       
     }));
 }
 
-function toggleClearCompleteButton(checkedBoxes){
+function toggleVisibilityClearCompleteButton(checkedBoxes){
     const clearCompleted = document.querySelector("#clearCompleted");
     if (checkedBoxes==0) {
         clearCompleted.style.display = "none";
