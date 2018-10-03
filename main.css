@@ -137,7 +137,9 @@ input:checked+label {
 input.deleteButton{
     display: none;
 }
-
+input#clearCompleated{
+    display: none;
+}
 
 label:hover + input.deleteButton{
     display: block;

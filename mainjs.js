@@ -3,12 +3,14 @@ function createList() {
     let parent = document.querySelector("#todoApp-extension");
     let ul = document.createElement("ul");
     parent.appendChild(ul);
-    let appFooter = document.querySelector("#todoFooter");
-    // appFooter.style.display = "block";
+    const appFooter = document.querySelector("#todoFooter");
     appFooter.style.display = "flex";
     let toggleAll = document.querySelector("#btnToggleAll");
     toggleAll.style.display = "block";
     let textBox = document.querySelector("#btnToggleAll");
+    const clearCompleted = document.querySelector("#clearCompleted");
+    clearCompleted.style.display = "none";
+   
 }
 
 // creates li element
@@ -134,7 +136,6 @@ function removeButtonEventListener() {
     let ul = document.querySelector("ul");
     let ulParent = document.querySelector("#todoApp-extension");
 
-
     // add eventlister to <ul> and add some event delegation
     // event.target is the child element that triggered the event <li> in the case of a <ul>
     // make sure the clicked element in the <li> is a button
@@ -199,23 +200,37 @@ function deleteInActiveButtonEventListener() {
 //counts items left
 
 
-function itemsLefteventListener(){
-    
+function itemsLefteventListener() {
+
     const wholeAppArea = document.querySelectorAll('.todoApp');
-    wholeAppArea.forEach(area => area.addEventListener('click',()=>{
+    
+
+    wholeAppArea.forEach(area => area.addEventListener('click', () => {
         const lableForResult = document.querySelector("#itemsLeft");
         const activeList = Array.from(document.querySelectorAll(".checkboxes"));
         let result = 0;
+        let checkedBoxes = 0;
         for (i = 0; i < activeList.length; i++) {
             if (activeList[i].checked == false) {
                 result++;
+            }else{
+                checkedBoxes++;
             }
         }
-        console.log(result);
         lableForResult.textContent = `${result} items left`;
-        
-}));
+        toggleClearCompleteButton(checkedBoxes);       
+    }));
 }
+
+function toggleClearCompleteButton(checkedBoxes){
+    const clearCompleted = document.querySelector("#clearCompleted");
+    if (checkedBoxes==0) {
+        clearCompleted.style.display = "none";
+    } else {
+        clearCompleted.style.display = "flex";
+    }
+}
+
 
 itemsLefteventListener();
 deleteInActiveButtonEventListener();
