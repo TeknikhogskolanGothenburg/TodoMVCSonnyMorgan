@@ -272,20 +272,24 @@ function fullOpacityToggleAllButton(){
     
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
     let removeBtns = Array.from(document.querySelectorAll(".deleteButton"));
-    let checkAllStatus = true;
+    
     
     for(i = 0; i < checkboxes.length; i++){
-        checkboxes[i].addEventListener("change", event=>{
+        checkboxes[i].addEventListener("click", event=>{
+            let checkAllStatus = true;
             for(j = 0; j < checkboxes.length; j++){
                 if(!checkboxes[j].checked){
                     checkAllStatus = false;
                     toggleAllBtnImg.style.opacity = "0.5";
                 }
-                else{
+                
+                if(checkAllStatus == true){
                     toggleAllBtnImg.style.opacity = "1";
                 }
+                else{
+                    toggleAllBtnImg.style.opacity = "0.5";
+                }
             }
-            
         });
     }
 }
