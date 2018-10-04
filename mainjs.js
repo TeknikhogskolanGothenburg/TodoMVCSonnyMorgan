@@ -97,16 +97,16 @@ function textBoxEventListener() {
                 let ulExists = document.querySelector("#todoApp-extension ul");
                 if (ulExists == null) {
                     createList();
-                    addToList();
-                    removeButtonEventListener();
+                    addToList();                   
                     checkBoxEventListener();
                     fullOpacityToggleAllButton();
+                    removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
                 } else {
-                    addToList();
-                    removeButtonEventListener();
+                    addToList();                
                     checkBoxEventListener();
                     fullOpacityToggleAllButton();
+                    removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
                 }
             }
@@ -269,11 +269,8 @@ function toggleVisibilityClearCompleteButton(checkedBoxes){
 
 function fullOpacityToggleAllButton(){
     let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
-    
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
-    let removeBtns = Array.from(document.querySelectorAll(".deleteButton"));
-    
-    
+ 
     for(i = 0; i < checkboxes.length; i++){
         checkboxes[i].addEventListener("click", event=>{
             let checkAllStatus = true;
