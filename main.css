@@ -57,6 +57,15 @@ h1 {
     display: none;
 }
 
+#btnToggleAll img{
+    display: block;
+    margin-top: 30%;
+    margin-bottom: 70%;
+    margin-left: 20%;
+    margin-right: 80%;
+    opacity: 0.5;
+}
+
 .infoFooter {
     font-size: 12px;
     opacity: 0.4;
