@@ -70,10 +70,15 @@ function toggleAllButtonEventListener() {
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = false;
             }
+            let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+            toggleAllBtnImg.style.opacity = "0.5";
+
         } else {
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = true;
             }
+            let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+            toggleAllBtnImg.style.opacity = "1";
         }
     });
 }
@@ -95,11 +100,13 @@ function textBoxEventListener() {
                     addToList();
                     removeButtonEventListener();
                     checkBoxEventListener();
+                    fullOpacityToggleAllButton();
                     textBox.style.paddingLeft = "40px";
                 } else {
                     addToList();
                     removeButtonEventListener();
                     checkBoxEventListener();
+                    fullOpacityToggleAllButton();
                     textBox.style.paddingLeft = "40px";
                 }
             }
@@ -260,6 +267,28 @@ function toggleVisibilityClearCompleteButton(checkedBoxes){
     }
 }
 
+function fullOpacityToggleAllButton(){
+    let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+    
+    let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
+    let removeBtns = Array.from(document.querySelectorAll(".deleteButton"));
+    let checkAllStatus = true;
+    
+    for(i = 0; i < checkboxes.length; i++){
+        checkboxes[i].addEventListener("change", event=>{
+            for(j = 0; j < checkboxes.length; j++){
+                if(!checkboxes[j].checked){
+                    checkAllStatus = false;
+                    toggleAllBtnImg.style.opacity = "0.5";
+                }
+                else{
+                    toggleAllBtnImg.style.opacity = "1";
+                }
+            }
+            
+        });
+    }
+}
 
 
 itemsLefteventListener();
