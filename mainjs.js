@@ -1,4 +1,12 @@
-var filter = "All";
+const footerButton = {  
+    ALL: "all",
+    ACTIVE: "active",
+    COMPLETED: "completed"
+  };
+let choosenFooterButton=footerButton.ALL;
+
+
+
 
 // creates ul element
 function createList() {
@@ -120,7 +128,8 @@ function textBoxEventListener() {
 function activeButtonEventListener() {
     let active = document.querySelector("#active");
     active.addEventListener("click", event => {
-        filter = "Active";
+        choosenFooterButton=footerButton.ACTIVE;      
+       
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
             if (activeList[i].checked == true) {
@@ -139,7 +148,7 @@ function activeButtonEventListener() {
 function allButtonEventListener() {
     let all = document.querySelector("#all");
     all.addEventListener("click", event => {
-        filter = "All";
+        choosenFooterButton=footerButton.ALL;
         let allList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < allList.length; i++) {
             allList[i].parentNode.parentNode.style.display = "block";
@@ -186,7 +195,7 @@ function removeButtonEventListener() {
 function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
-        filter = "Completed";
+        choosenFooterButton=footerButton.COMPLETED;
         let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < inActiveList.length; i++) {
             if (inActiveList[i].checked == false) {
@@ -222,7 +231,8 @@ function updateOnClick() {
         countItemsLeftToDo() |
         toggleVisibilityClearCompleteButton() |
         toggleTodoFooter() |
-        fullOpacityToggleAllButton()
+        fullOpacityToggleAllButton()|
+        persisitChoosenSort()
 
     ))
 }
@@ -300,38 +310,36 @@ function fullOpacityToggleAllButton() {
 }
 
 
-/*
-function checkBoxEventListener() {
+
+function persisitChoosenSort() {
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
     let all = document.querySelector("#all");
     let active = document.querySelector("#active");
     let completed = document.querySelector("#completed");
    
 
-    for (i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].addEventListener("click", event => {
-            if (filter == "All") {
-
+    
+        
+            if (choosenFooterButton == footerButton.ALL) {
                 all.style.textDecoration='underline';
                 active.style.textDecoration='none';
                 completed.style.textDecoration='none';
-                all.click();
-               
-            } else if (filter == "Active") {
+                all.click();           
+            } else if (choosenFooterButton == footerButton.ACTIVE) {
                 all.style.textDecoration='none';
                 active.style.textDecoration='underline';
                 completed.style.textDecoration='none';
                 active.click();
-            } else if (filter == "Completed") {
+            } else if (choosenFooterButton == footerButton.COMPLETED) {
                 all.style.textDecoration='none';
                 active.style.textDecoration='none';
                 completed.style.textDecoration='underline';
                 completed.click();
             }
-        });
+       
     }
-}
-*/
+
+
 
 updateOnClick();
 deleteInActiveButtonEventListener();
