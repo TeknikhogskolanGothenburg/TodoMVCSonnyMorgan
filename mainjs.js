@@ -73,10 +73,15 @@ function toggleAllButtonEventListener() {
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = false;
             }
+            let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+            toggleAllBtnImg.style.opacity = "0.5";
+
         } else {
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = true;
             }
+            let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+            toggleAllBtnImg.style.opacity = "1";
         }
     });
 }
@@ -95,14 +100,16 @@ function textBoxEventListener() {
                 let ulExists = document.querySelector("#todoApp-extension ul");
                 if (ulExists == null) {
                     createList();
-                    addToList();
-                    removeButtonEventListener();
+                    addToList();                   
                     checkBoxEventListener();
+                    fullOpacityToggleAllButton();
+                    removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
                 } else {
-                    addToList();
-                    removeButtonEventListener();
+                    addToList();                
                     checkBoxEventListener();
+                    fullOpacityToggleAllButton();
+                    removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
                 }
             }
@@ -263,6 +270,29 @@ function toggleVisibilityClearCompleteButton() {
     }
 }
 
+function fullOpacityToggleAllButton(){
+    let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+    let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
+ 
+    for(i = 0; i < checkboxes.length; i++){
+        checkboxes[i].addEventListener("click", event=>{
+            let checkAllStatus = true;
+            for(j = 0; j < checkboxes.length; j++){
+                if(!checkboxes[j].checked){
+                    checkAllStatus = false;
+                    toggleAllBtnImg.style.opacity = "0.5";
+                }
+                
+                if(checkAllStatus == true){
+                    toggleAllBtnImg.style.opacity = "1";
+                }
+                else{
+                    toggleAllBtnImg.style.opacity = "0.5";
+                }
+            }
+        });
+    }
+}
 
 
 function checkBoxEventListener() {
