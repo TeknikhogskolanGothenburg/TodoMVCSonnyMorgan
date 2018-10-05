@@ -1,8 +1,11 @@
+
+// A Global to store options of sorting.
 const footerButton = {  
     ALL: "all",
     ACTIVE: "active",
     COMPLETED: "completed"
   };
+  //Start Default option of "ALL"
 let choosenFooterButton=footerButton.ALL;
 
 
