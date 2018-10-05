@@ -1,12 +1,11 @@
-
 // A Global to store options of sorting.
-const footerButton = {  
+const footerButton = {
     ALL: "all",
     ACTIVE: "active",
     COMPLETED: "completed"
-  };
-  //Start Default option of "ALL"
-let choosenFooterButton=footerButton.ALL;
+};
+//Start Default option of "ALL"
+let choosenFooterButton = footerButton.ALL;
 
 
 
@@ -17,7 +16,7 @@ function createList() {
     let ul = document.createElement("ul");
     parent.appendChild(ul);
     const appFooter = document.querySelector("#todoFooter");
-    appFooter.style.display = "flex";
+    appFooter.style.display = "block";
     let toggleAll = document.querySelector("#btnToggleAll");
     toggleAll.style.display = "block";
     //let textBox = document.querySelector("#btnToggleAll");
@@ -131,8 +130,8 @@ function textBoxEventListener() {
 function activeButtonEventListener() {
     let active = document.querySelector("#active");
     active.addEventListener("click", event => {
-        choosenFooterButton=footerButton.ACTIVE;      
-       
+        choosenFooterButton = footerButton.ACTIVE;
+
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
             if (activeList[i].checked == true) {
@@ -151,7 +150,7 @@ function activeButtonEventListener() {
 function allButtonEventListener() {
     let all = document.querySelector("#all");
     all.addEventListener("click", event => {
-        choosenFooterButton=footerButton.ALL;
+        choosenFooterButton = footerButton.ALL;
         let allList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < allList.length; i++) {
             allList[i].parentNode.parentNode.style.display = "block";
@@ -190,7 +189,7 @@ function removeButtonEventListener() {
         }
 
     });
-    
+
 
 }
 
@@ -198,7 +197,7 @@ function removeButtonEventListener() {
 function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
-        choosenFooterButton=footerButton.COMPLETED;
+        choosenFooterButton = footerButton.COMPLETED;
         let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < inActiveList.length; i++) {
             if (inActiveList[i].checked == false) {
@@ -234,7 +233,7 @@ function updateOnClick() {
         countItemsLeftToDo() |
         toggleVisibilityClearCompleteButton() |
         toggleTodoFooter() |
-        fullOpacityToggleAllButton()|
+        fullOpacityToggleAllButton() |
         persisitChoosenSort()
 
     ))
@@ -247,7 +246,7 @@ function toggleTodoFooter() {
     if (activeList.length == 0) {
         appFooter.style.display = "none";
     } else {
-        appFooter.style.display = "flex";
+        appFooter.style.display = "block";
     }
 
 }
@@ -262,7 +261,7 @@ function countItemsLeftToDo() {
             result++;
         }
     }
-    lableForResult.textContent = `${result} items left`;
+    lableForResult.textContent = `${result} items left `;
 }
 
 function toggleVisibilityClearCompleteButton() {
@@ -289,7 +288,7 @@ function fullOpacityToggleAllButton() {
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
 
     for (i = 0; i < checkboxes.length; i++) {
-      
+
         let checkAllStatus = true;
         for (j = 0; j < checkboxes.length; j++) {
             if (!checkboxes[j].checked) {
@@ -307,9 +306,9 @@ function fullOpacityToggleAllButton() {
             }
         }
     }
-    if(checkboxes.length==0){
-    toggleAllBtnImg.style.visibility = 'hidden';
-}
+    if (checkboxes.length == 0) {
+        toggleAllBtnImg.style.visibility = 'hidden';
+    }
 }
 
 
@@ -319,28 +318,28 @@ function persisitChoosenSort() {
     let all = document.querySelector("#all");
     let active = document.querySelector("#active");
     let completed = document.querySelector("#completed");
-   
 
-    
-        
-            if (choosenFooterButton == footerButton.ALL) {
-                all.style.textDecoration='underline';
-                active.style.textDecoration='none';
-                completed.style.textDecoration='none';
-                all.click();           
-            } else if (choosenFooterButton == footerButton.ACTIVE) {
-                all.style.textDecoration='none';
-                active.style.textDecoration='underline';
-                completed.style.textDecoration='none';
-                active.click();
-            } else if (choosenFooterButton == footerButton.COMPLETED) {
-                all.style.textDecoration='none';
-                active.style.textDecoration='none';
-                completed.style.textDecoration='underline';
-                completed.click();
-            }
-       
+
+
+
+    if (choosenFooterButton == footerButton.ALL) {
+        all.style.textDecoration = 'underline';
+        active.style.textDecoration = 'none';
+        completed.style.textDecoration = 'none';
+        all.click();
+    } else if (choosenFooterButton == footerButton.ACTIVE) {
+        all.style.textDecoration = 'none';
+        active.style.textDecoration = 'underline';
+        completed.style.textDecoration = 'none';
+        active.click();
+    } else if (choosenFooterButton == footerButton.COMPLETED) {
+        all.style.textDecoration = 'none';
+        active.style.textDecoration = 'none';
+        completed.style.textDecoration = 'underline';
+        completed.click();
     }
+
+}
 
 
 

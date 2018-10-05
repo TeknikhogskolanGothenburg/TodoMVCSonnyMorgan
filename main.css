@@ -123,11 +123,20 @@ h1 {
 
 
 #todoFooter {
-   display: flex;
-   justify-content: flex-start;
+   display: block;
     display: none;
-   
     
+}
+#clearCompleted {
+    float: right;
+    margin-right: 10px;
+}
+#itemsLeft{
+    float: left;
+    margin-left: 10px
+}
+#all{
+    margin-left:8em;
 }
 
 input[type="checkbox"] {
@@ -146,9 +155,7 @@ input:checked+label {
 input.deleteButton{
     display: none;
 }
-input#clearCompleated{
-    display: none;
-}
+
 
 label:hover + input.deleteButton{
     display: block;
