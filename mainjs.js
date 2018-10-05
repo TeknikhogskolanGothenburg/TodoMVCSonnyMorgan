@@ -52,6 +52,7 @@ function addToList() {
 
     countItemsLeftToDo();
     toggleTodoFooter();
+    fullOpacityToggleAllButton();
 }
 
 
@@ -100,15 +101,13 @@ function textBoxEventListener() {
                 let ulExists = document.querySelector("#todoApp-extension ul");
                 if (ulExists == null) {
                     createList();
-                    addToList();                   
-                    checkBoxEventListener();
-                    fullOpacityToggleAllButton();
+                    addToList();
+
                     removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
                 } else {
-                    addToList();                
-                    checkBoxEventListener();
-                    fullOpacityToggleAllButton();
+                    addToList();
+
                     removeButtonEventListener();
                     textBox.style.paddingLeft = "40px";
                 }
@@ -179,7 +178,7 @@ function removeButtonEventListener() {
         }
 
     });
-
+    
 
 }
 
@@ -217,12 +216,14 @@ function deleteInActiveButtonEventListener() {
 
 //Things to be altered constantly on click
 
-function itemsLefteventListener() {
+function updateOnClick() {
     const wholeAppArea = document.querySelectorAll('.todoApp');
     wholeAppArea.forEach(area => area.addEventListener('click', event =>
         countItemsLeftToDo() |
         toggleVisibilityClearCompleteButton() |
-        toggleTodoFooter()
+        toggleTodoFooter() |
+        fullOpacityToggleAllButton()
+
     ))
 }
 
@@ -270,36 +271,42 @@ function toggleVisibilityClearCompleteButton() {
     }
 }
 
-function fullOpacityToggleAllButton(){
+function fullOpacityToggleAllButton() {
     let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
- 
-    for(i = 0; i < checkboxes.length; i++){
-        checkboxes[i].addEventListener("click", event=>{
-            let checkAllStatus = true;
-            for(j = 0; j < checkboxes.length; j++){
-                if(!checkboxes[j].checked){
-                    checkAllStatus = false;
-                    toggleAllBtnImg.style.opacity = "0.5";
-                }
-                
-                if(checkAllStatus == true){
-                    toggleAllBtnImg.style.opacity = "1";
-                }
-                else{
-                    toggleAllBtnImg.style.opacity = "0.5";
-                }
+
+    for (i = 0; i < checkboxes.length; i++) {
+      
+        let checkAllStatus = true;
+        for (j = 0; j < checkboxes.length; j++) {
+            if (!checkboxes[j].checked) {
+                checkAllStatus = false;
+                toggleAllBtnImg.style.opacity = "0.5";
+                toggleAllBtnImg.style.visibility = 'visible';
             }
-        });
+
+            if (checkAllStatus == true) {
+                toggleAllBtnImg.style.opacity = "1";
+                toggleAllBtnImg.style.visibility = 'visible';
+            } else {
+                toggleAllBtnImg.style.opacity = "0.5";
+                toggleAllBtnImg.style.visibility = 'visible';
+            }
+        }
     }
+    if(checkboxes.length==0){
+    toggleAllBtnImg.style.visibility = 'hidden';
+}
 }
 
 
+/*
 function checkBoxEventListener() {
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
     let all = document.querySelector("#all");
     let active = document.querySelector("#active");
     let completed = document.querySelector("#completed");
+   
 
     for (i = 0; i < checkboxes.length; i++) {
         checkboxes[i].addEventListener("click", event => {
@@ -324,10 +331,9 @@ function checkBoxEventListener() {
         });
     }
 }
+*/
 
-
-
-itemsLefteventListener();
+updateOnClick();
 deleteInActiveButtonEventListener();
 inActiveButtonEventListener();
 textBoxEventListener();
