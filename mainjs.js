@@ -63,6 +63,7 @@ function addToList() {
     countItemsLeftToDo();
     toggleTodoFooter();
     fullOpacityToggleAllButton();
+    persistantSort();
 }
 
 
@@ -234,7 +235,7 @@ function updateOnClick() {
         toggleVisibilityClearCompleteButton() |
         toggleTodoFooter() |
         fullOpacityToggleAllButton() |
-        persisitChoosenSort()
+        persistantSort()
 
     ))
 }
@@ -313,7 +314,7 @@ function fullOpacityToggleAllButton() {
 
 
 
-function persisitChoosenSort() {
+function persistantSort() {
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
     let all = document.querySelector("#all");
     let active = document.querySelector("#active");
