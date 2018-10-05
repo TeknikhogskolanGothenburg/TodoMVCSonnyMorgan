@@ -9,10 +9,10 @@ function createList() {
     appFooter.style.display = "flex";
     let toggleAll = document.querySelector("#btnToggleAll");
     toggleAll.style.display = "block";
-    let textBox = document.querySelector("#btnToggleAll");
+    //let textBox = document.querySelector("#btnToggleAll");
     const clearCompleted = document.querySelector("#clearCompleted");
     clearCompleted.style.display = "none";
-   
+
 }
 
 // creates li element
@@ -49,6 +49,9 @@ function addToList() {
 
     parent.appendChild(li);
     textbox.value = "";
+
+    countItemsLeftToDo();
+    toggleTodoFooter();
 }
 
 
@@ -122,12 +125,12 @@ function activeButtonEventListener() {
                 activeList[i].parentNode.parentNode.style.display = "block";
             }
         }
-        
+
     });
 }
 
 // all button in the footer functionality
-function allButtonEventListener() {   
+function allButtonEventListener() {
     let all = document.querySelector("#all");
     all.addEventListener("click", event => {
         filter = "All";
@@ -174,7 +177,7 @@ function removeButtonEventListener() {
 }
 
 
-function inActiveButtonEventListener() {  
+function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
         filter = "Completed";
@@ -205,58 +208,90 @@ function deleteInActiveButtonEventListener() {
     });
 }
 
-//counts items left
-
+//Things to be altered constantly on click
 
 function itemsLefteventListener() {
-
     const wholeAppArea = document.querySelectorAll('.todoApp');
-    
-
-    wholeAppArea.forEach(area => area.addEventListener('click', () => {
-        const lableForResult = document.querySelector("#itemsLeft");
-        const activeList = Array.from(document.querySelectorAll(".checkboxes"));
-        let result = 0;
-        let checkedBoxes = 0;
-        for (i = 0; i < activeList.length; i++) {
-            if (activeList[i].checked == false) {
-                result++;
-            }else{
-                checkedBoxes++;
-            }
-        }
-        lableForResult.textContent = `${result} items left`;
-        toggleVisibilityClearCompleteButton(checkedBoxes);       
-    }));
+    wholeAppArea.forEach(area => area.addEventListener('click', event =>
+        countItemsLeftToDo() |
+        toggleVisibilityClearCompleteButton() |
+        toggleTodoFooter()
+    ))
 }
 
-function checkBoxEventListener(){
-    let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
-    for(i = 0; i < checkboxes.length; i++){
-        checkboxes[i].addEventListener("click", event=>{
-            if(filter == "All"){
-                let all = document.querySelector("#all");
-                all.click();
-            }
-            else if(filter == "Active"){
-                let active = document.querySelector("#active");
-                active.click();
-            }
-            else if(filter == "Completed"){
-                let completed = document.querySelector("#completed");
-                completed.click();
-            }
-        });
+function toggleTodoFooter() {
+    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
+    const appFooter = document.querySelector("#todoFooter");
+
+    if (activeList.length == 0) {
+        appFooter.style.display = "none";
+    } else {
+        appFooter.style.display = "flex";
+    }
+
+}
+
+function countItemsLeftToDo() {
+
+    const lableForResult = document.querySelector("#itemsLeft");
+    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
+    let result = 0;
+    for (i = 0; i < activeList.length; i++) {
+        if (activeList[i].checked == false) {
+            result++;
+        }
+    }
+    lableForResult.textContent = `${result} items left`;
+}
+
+function toggleVisibilityClearCompleteButton() {
+
+    const activeList = Array.from(document.querySelectorAll(".checkboxes"));
+
+    let checkedBoxes = 0;
+    for (i = 0; i < activeList.length; i++) {
+        if (activeList[i].checked == true) {
+            checkedBoxes++;
+        }
+    }
+
+    const clearCompleted = document.querySelector("#clearCompleted");
+    if (checkedBoxes == 0) {
+        clearCompleted.style.display = "none";
+    } else {
+        clearCompleted.style.display = "flex";
     }
 }
 
 
-function toggleVisibilityClearCompleteButton(checkedBoxes){
-    const clearCompleted = document.querySelector("#clearCompleted");
-    if (checkedBoxes==0) {
-        clearCompleted.style.display = "none";
-    } else {
-        clearCompleted.style.display = "flex";
+
+function checkBoxEventListener() {
+    let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
+    let all = document.querySelector("#all");
+    let active = document.querySelector("#active");
+    let completed = document.querySelector("#completed");
+
+    for (i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].addEventListener("click", event => {
+            if (filter == "All") {
+
+                all.style.textDecoration='underline';
+                active.style.textDecoration='none';
+                completed.style.textDecoration='none';
+                all.click();
+               
+            } else if (filter == "Active") {
+                all.style.textDecoration='none';
+                active.style.textDecoration='underline';
+                completed.style.textDecoration='none';
+                active.click();
+            } else if (filter == "Completed") {
+                all.style.textDecoration='none';
+                active.style.textDecoration='none';
+                completed.style.textDecoration='underline';
+                completed.click();
+            }
+        });
     }
 }
 
