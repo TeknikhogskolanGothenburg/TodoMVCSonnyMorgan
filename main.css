@@ -3,18 +3,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-        background:lightblue;
-      
+    background: lightblue;
+
 }
 
 .todoApp {
     width: 550px;
     margin: auto;
-    background:white;
-    border-radius:5px;
-    box-shadow:10px 10px 0 rgba(14, 124, 124, 0.1);
+    background: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(14, 124, 124, 0.1);
 
-  
+
 }
 
 h1 {
@@ -47,7 +47,7 @@ h1 {
     outline: 0;
     border: none;
     padding-left: 82px;
-    
+
 }
 
 #btnToggleAll {
@@ -57,7 +57,7 @@ h1 {
     display: none;
 }
 
-#btnToggleAll img{
+#btnToggleAll img {
     display: block;
     margin-top: 30%;
     margin-bottom: 70%;
@@ -92,12 +92,12 @@ h1 {
 
 #todoApp-extension ul li {
     width: 550px;
-   
+
 }
 
 #todoApp-extension ul li div {
     display: flex;
-    
+
     width: 550px;
     margin: auto;
 }
@@ -117,59 +117,64 @@ h1 {
     font-style: italic;
     outline: none;
     text-align: left;
-   
+
 }
 
 
 
 #todoFooter {
-   display: block;
+    display: block;
     display: none;
-    
+
 }
+
 #clearCompleted {
     float: right;
     margin-right: 10px;
 }
-#itemsLeft{
+
+#itemsLeft {
     float: left;
     margin-left: 10px
 }
-#all{
-    margin-left:8em;
+
+#all {
+    margin-left: 8em;
 }
 
 input[type="checkbox"] {
-   width:60px ;
-   height: 60px;
-   float: left;
-  
+    width: 60px;
+    height: 60px;
+    float: left;
+
 }
 
 input:checked+label {
     text-decoration: line-through;
-    color:grey;
-    background-color:lightgrey;
+    color: grey;
+    background-color: lightgrey;
 }
 
-input.deleteButton{
+input.deleteButton {
     display: none;
 }
 
 
-label:hover + input.deleteButton{
+label:hover+input.deleteButton {
     display: block;
 }
-input.deleteButton:hover{
-    display:block;
-}
-li.listItem{
-    border-bottom:2px solid rgba(14, 124, 124, 0.1) ;
-    
+
+input.deleteButton:hover {
+    display: block;
 }
 
-ul > li:nth-child(1){
-    border-top:2px solid rgba(14, 124, 124, 0.1) ;
+li.listItem {
+    border-bottom: 2px solid rgba(14, 124, 124, 0.1);
+
+}
+
+ul>li:nth-child(1) {
+    border-top: 2px solid rgba(14, 124, 124, 0.1);
 }
 
 
