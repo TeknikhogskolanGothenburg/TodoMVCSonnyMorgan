@@ -132,7 +132,9 @@ h1 {
     float: right;
     margin-right: 10px;
 }
-
+#clearCompleted:hover{
+    text-decoration: underline;
+}
 #itemsLeft {
     float: left;
     margin-left: 10px
@@ -159,7 +161,15 @@ input.deleteButton {
     display: none;
 }
 
-
+#all:hover{
+    cursor: pointer;
+}
+#active{
+    cursor: pointer;
+}
+#completed{
+    cursor: pointer;
+}
 label:hover+input.deleteButton {
     display: block;
 }
