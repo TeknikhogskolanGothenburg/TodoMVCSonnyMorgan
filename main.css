@@ -292,7 +292,7 @@ ul>li:nth-child(1) {
     .todoApp {
        
         width: auto;
-        margin: auto;
+        margin: 20px;
         background: white;
         border-radius: 5px;
         box-shadow: 10px 10px 0 rgba(14, 124, 124, 0.1);
@@ -321,10 +321,13 @@ ul>li:nth-child(1) {
     #todoFooter {       
         display: block;
         display: none;
+    
     }
     #todoFooter button {
         height: 30px;
         font-size: 1.2em;
+        margin-bottom: 3px;
+        margin-top: 3px;
     }
     #itemsLeft{
         font-size: 1.5em
