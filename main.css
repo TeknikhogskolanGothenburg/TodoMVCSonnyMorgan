@@ -189,6 +189,13 @@ ul>li:nth-child(1) {
 
 
 @media (max-width: 548px) {
+#textboxBarHeader{
+width: 100%;
+}
+#todoTextboxBar{
+width: 100%;
+}
+
 
 }
 
