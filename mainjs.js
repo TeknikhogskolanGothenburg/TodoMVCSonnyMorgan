@@ -43,12 +43,13 @@ function addToList() {
 
     let newListContent = textbox.value;
     let result = "";
+    /*
     while (newListContent.length > 0) {
         result += newListContent.substring(0, 30) + '\n';
         newListContent = newListContent.substring(30);
     }
-
-    label.textContent = result;
+    */
+    label.textContent = newListContent;
 
     li.className = "listItem";
 

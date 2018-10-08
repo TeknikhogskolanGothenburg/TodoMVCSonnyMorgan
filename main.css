@@ -36,6 +36,7 @@ h1 {
     height: 65px;
     width: 540px;
     margin: 10px;
+    margin-bottom: 0;
 }
 
 #newTodoTextbox {
@@ -47,6 +48,7 @@ h1 {
     outline: 0;
     border: none;
     padding-left: 82px;
+    margin-right: 10px;
 
 }
 
@@ -189,11 +191,26 @@ ul>li:nth-child(1) {
 
 
 @media (max-width: 548px) {
+
+.todoApp{
+    width: 100%;
+}
+.todoHeader{
+    width: 100%;
+}
 #textboxBarHeader{
-width: 100%;
+   width: 100%;
 }
 #todoTextboxBar{
-width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+#newTodoTextbox{
+    width: 80%;
+}
+#btnToggleAll{
+    flex: 1;
 }
 
 
