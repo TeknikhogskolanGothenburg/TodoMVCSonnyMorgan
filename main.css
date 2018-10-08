@@ -90,10 +90,6 @@ h1 {
     padding: 0;
 }
 
-#todoApp-extension ul li {
-    width: 550px;
-
-}
 
 #todoApp-extension ul li div {
     display: flex;
@@ -200,5 +196,39 @@ width: 100%;
 }
 
 @media (min-width: 1000px) {
+
+    .todoApp {
+        width: auto;
+        margin: auto;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 10px 10px 0 rgba(14, 124, 124, 0.1);
+    
+    
+    }
+    #todoTextboxBar {
+        display: flex;
+        height: 65px;
+        width: auto;
+        margin: 10px;
+    }
+    #newTodoTextbox {
+        height: 59.1px;
+        width: auto;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: italic;
+        outline: 0;
+        border: none;
+        padding-left: 82px;
+    
+    }
+    #todoApp-extension ul li div {
+        display: flex;
+    
+        width: auto;
+        margin: auto;
+    }
+    
 
 }
