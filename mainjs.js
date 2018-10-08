@@ -50,21 +50,34 @@ function addToList() {
     }
     */
     label.textContent = newListContent;
-
+    
     li.className = "listItem";
-
+    
     li.appendChild(div1);
     div1.appendChild(checkbox);
     div1.appendChild(label);
     div1.appendChild(button);
-
     parent.appendChild(li);
-    textbox.value = "";
+    label.addEventListener("dblclick",()=>{
+        label.contentEditable='true';
+        label.style.outline = "solid";
+        label.addEventListener("keypress", (e) => {
+            let key = e.which || e.keyCode;
+            if (key ===13) {
+                label.contentEditable='false';
+                label.style.outline = "none";  
+            }
+        });
 
+    })
+    textbox.value = "";
+    doubleClickLableEventListener();
     countItemsLeftToDo();
     toggleTodoFooter();
     fullOpacityToggleAllButton();
     persistantSort();
+    
+
 }
 
 
@@ -163,7 +176,7 @@ function allButtonEventListener() {
 // remove button in the list functionality
 function removeButtonEventListener() {
     let ul = document.querySelector("ul");
-    let ulParent = document.querySelector("#todoApp-extension");
+    //let ulParent = document.querySelector("#todoApp-extension");
 
     // add eventlister to <ul> and add some event delegation
     // event.target is the child element that triggered the event <li> in the case of a <ul>
@@ -316,13 +329,9 @@ function fullOpacityToggleAllButton() {
 
 
 function persistantSort() {
-    let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
     let all = document.querySelector("#all");
     let active = document.querySelector("#active");
     let completed = document.querySelector("#completed");
-
-
-
 
     if (choosenFooterButton == footerButton.ALL) {
         all.style.textDecoration = 'underline';
@@ -342,8 +351,21 @@ function persistantSort() {
     }
 
 }
+/*
+function doubleClickLableEventListener()
+{
+    const inputLabel = querySelectorAll('div > label');
+  //  const wholeAppArea = document.querySelectorAll('.todoApp');
+  //  wholeAppArea.forEach(area => area.addEventListener('click', event =>
 
+    inputLabel.addEventListener('dblclick', event =>{
+        inputLabel.contentEditable='true';
+        
+    });
 
+    
+}
+*/
 
 updateOnClick();
 deleteInActiveButtonEventListener();
