@@ -189,28 +189,62 @@ ul>li:nth-child(1) {
 @media (max-width: 548px) {
 
 .todoApp{
-    width: 100%;
+    width: auto; 
 }
 .todoHeader{
-    width: 100%;
+    width: auto;
 }
 #textboxBarHeader{
-   width: 100%;
+   width: auto;
 }
 #todoTextboxBar{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-}
-#newTodoTextbox{
-    width: 80%;
+    width: auto;
 }
 #btnToggleAll{
-    flex: 1;
+    width: auto;
+}
+#newTodoTextbox{
+    width: auto;
+}
+#todoApp-extension{
+    width: auto;
+}
+#todoFooter{
+    width: auto;
+}
+
+#todoFooter button{
+    width: auto;
+}
+
+#todoApp-extension ul {
+    width: auto;
 }
 
 
+#todoApp-extension ul li div {
+    width: auto;
 }
+
+#todoApp-extension ul li div checkbox {
+    width: auto;
+}
+
+#todoApp-extension ul li div label {
+    width: auto;
+
+}
+
+#all {
+    margin-left: 5px;
+}
+
+}
+@media (max-width: 398px){
+
+}
+
+
 
 @media (min-width: 1000px) {
 
