@@ -189,7 +189,7 @@ ul>li:nth-child(1) {
 @media (max-width: 548px) {
 
 .todoApp{
-    width: auto; 
+    width: auto;
 }
 .todoHeader{
     width: auto;
@@ -238,28 +238,28 @@ ul>li:nth-child(1) {
 }
 
 }
-@media (max-width: 412px){
+@media (max-width: 430px){
     .todoApp{
-        width: 395.2px; 
+        min-width: 400.2px; 
     }
     .todoHeader{
-        width: 395.2px;
+        width: 400.2px;
     }
     #textboxBarHeader{
-       width: 395.2px;
+       width: 400.2px;
     }
     #todoTextboxBar{
-        width: 375.2px;
+        width: 380.2px;
     }
     
     #newTodoTextbox{
-        width: 312.8px;
+        width: 317.8px;
     }
     #todoApp-extension{
-        width:  395.2px;
+        width:  400.2px;
     }
     #todoFooter{
-        width:  395.2px;
+        width:  400.2px;
     }
     
     #todoFooter button{
