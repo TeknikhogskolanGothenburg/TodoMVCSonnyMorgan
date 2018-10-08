@@ -207,28 +207,29 @@ width: 100%;
     
     }
     #todoTextboxBar {
-        display: flex;
-        height: 65px;
         width: auto;
-        margin: 10px;
     }
     #newTodoTextbox {
-        height: 59.1px;
+       
         width: auto;
-        font-size: 24px;
-        font-weight: normal;
-        font-style: italic;
-        outline: 0;
-        border: none;
-        padding-left: 82px;
+     
     
     }
     #todoApp-extension ul li div {
-        display: flex;
     
         width: auto;
         margin: auto;
     }
+    #todoApp-extension ul {      
+        width: auto;
+
+    }
+  
+    #todoFooter {
+        
+        display: block;
+        display: none;
     
+    }
 
 }
