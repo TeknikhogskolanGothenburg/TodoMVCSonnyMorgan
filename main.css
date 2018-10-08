@@ -188,4 +188,10 @@ ul>li:nth-child(1) {
 }
 
 
-@media (max-width: 548px) {}
+@media (max-width: 548px) {
+
+}
+
+@media (min-width: 1000px) {
+
+}
