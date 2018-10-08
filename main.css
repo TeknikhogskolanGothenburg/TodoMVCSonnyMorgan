@@ -200,9 +200,7 @@ ul>li:nth-child(1) {
 #todoTextboxBar{
     width: auto;
 }
-#btnToggleAll{
-    width: auto;
-}
+
 #newTodoTextbox{
     width: auto;
 }
@@ -240,8 +238,51 @@ ul>li:nth-child(1) {
 }
 
 }
-@media (max-width: 398px){
-
+@media (max-width: 412px){
+    .todoApp{
+        width: 395.2px; 
+    }
+    .todoHeader{
+        width: 395.2px;
+    }
+    #textboxBarHeader{
+       width: 395.2px;
+    }
+    #todoTextboxBar{
+        width: 375.2px;
+    }
+    
+    #newTodoTextbox{
+        width: 312.8px;
+    }
+    #todoApp-extension{
+        width:  395.2px;
+    }
+    #todoFooter{
+        width:  395.2px;
+    }
+    
+    #todoFooter button{
+        width: auto;
+    }
+    
+    #todoApp-extension ul {
+        width: auto;
+    }
+    
+    
+    #todoApp-extension ul li div {
+        width: auto;
+    }
+    
+    #todoApp-extension ul li div checkbox {
+        width: auto;
+    }
+    
+    #todoApp-extension ul li div label {
+        width: auto;
+    
+    }
 }
 
 
