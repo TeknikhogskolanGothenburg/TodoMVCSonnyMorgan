@@ -92,10 +92,6 @@ h1 {
     padding: 0;
 }
 
-#todoApp-extension ul li {
-    width: 550px;
-
-}
 
 #todoApp-extension ul li div {
     display: flex;
@@ -217,5 +213,40 @@ ul>li:nth-child(1) {
 }
 
 @media (min-width: 1000px) {
+
+    .todoApp {
+        width: auto;
+        margin: auto;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 10px 10px 0 rgba(14, 124, 124, 0.1);
+    
+    
+    }
+    #todoTextboxBar {
+        width: auto;
+    }
+    #newTodoTextbox {
+       
+        width: auto;
+     
+    
+    }
+    #todoApp-extension ul li div {
+    
+        width: auto;
+        margin: auto;
+    }
+    #todoApp-extension ul {      
+        width: auto;
+
+    }
+  
+    #todoFooter {
+        
+        display: block;
+        display: none;
+    
+    }
 
 }
