@@ -118,6 +118,17 @@ h1 {
 
 }
 
+.deleteButton{
+    color: palevioletred;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+}
+
+.deleteButton:hover{
+    color: crimson;
+}
+
 
 
 #todoFooter {
