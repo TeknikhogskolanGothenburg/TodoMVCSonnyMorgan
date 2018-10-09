@@ -123,6 +123,7 @@ h1 {
     border: none;
     background: transparent;
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .deleteButton:hover{
