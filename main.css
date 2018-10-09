@@ -295,6 +295,9 @@ ul>li:nth-child(1) {
         width: auto;
     
     }
+    .deleteButton{
+        margin-right: 20px;
+    }
 }
 
 
