@@ -30,6 +30,9 @@ h1 {
 
 #textbox-barheader {
     text-align: center;
+    border-bottom: solid;
+    border-color: lightblue;
+    border-width: thin;
 }
 
 #todo-textboxbar {
