@@ -13,7 +13,7 @@ function createList() {
     let ul = document.createElement("ul");
     parent.appendChild(ul);
     const appFooter = document.querySelector("#todo-footer");
-    appFooter.style.display = "block";
+    appFooter.style.visibility = "visible";
     let toggleAll = document.querySelector("#button-toggle-all");
     toggleAll.style.display = "block";
     const clearCompleted = document.querySelector("#clear-completed");
