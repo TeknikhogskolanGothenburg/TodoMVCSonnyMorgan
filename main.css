@@ -339,7 +339,7 @@ ul>li:nth-child(1) {
 
     #newTodoTextbox {
 
-        width: auto;
+        width: 100%;
 
 
     }
