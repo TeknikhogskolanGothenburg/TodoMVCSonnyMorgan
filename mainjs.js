@@ -156,13 +156,18 @@ function activeButtonEventListener() {
 // all button in the footer functionality
 function allButtonEventListener() {
     let all = document.querySelector("#all");
+    
     all.addEventListener("click", event => {
-        choosenFooterButton = footerButton.ALL;
+        allButtonClick();
+    });
+}
+
+function allButtonClick(){
+    choosenFooterButton = footerButton.ALL;
         let allList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < allList.length; i++) {
             allList[i].parentNode.parentNode.style.display = "block";
         }
-    });
 }
 
 // remove button in the list functionality
@@ -324,7 +329,7 @@ function persistantSort() {
         all.style.textDecoration = 'underline';
         active.style.textDecoration = 'none';
         completed.style.textDecoration = 'none';
-        all.click();
+        allButtonClick();
     } else if (choosenFooterButton == footerButton.ACTIVE) {
         all.style.textDecoration = 'none';
         active.style.textDecoration = 'underline';
@@ -338,21 +343,6 @@ function persistantSort() {
     }
 
 }
-/*
-function doubleClickLableEventListener()
-{
-    const inputLabel = querySelectorAll('div > label');
-  //  const wholeAppArea = document.querySelectorAll('.todoApp');
-  //  wholeAppArea.forEach(area => area.addEventListener('click', event =>
-
-    inputLabel.addEventListener('dblclick', event =>{
-        inputLabel.contentEditable='true';
-        
-    });
-
-    
-}
-*/
 
 updateOnClick();
 deleteInActiveButtonEventListener();
