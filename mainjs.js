@@ -76,14 +76,6 @@ function contentEditableOnDoubleClick(label) {
         });
 
     });
-    
-    textbox.value = "";
-    countItemsLeftToDo();
-    toggleTodoFooter();
-    fullOpacityToggleAllButton();
-    persistantSort();
-    
-
 }
 
 function toggleAllButtonEventListener() {
