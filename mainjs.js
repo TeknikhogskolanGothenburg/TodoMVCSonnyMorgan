@@ -139,6 +139,11 @@ function textBoxEventListener() {
 function activeButtonEventListener() {
     let active = document.querySelector("#active");
     active.addEventListener("click", event => {
+        activeButtonClick();
+    });
+}
+
+function activeButtonClick(){
         choosenFooterButton = footerButton.ACTIVE;
 
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
@@ -149,8 +154,6 @@ function activeButtonEventListener() {
                 activeList[i].parentNode.parentNode.style.display = "block";
             }
         }
-
-    });
 }
 
 // all button in the footer functionality
