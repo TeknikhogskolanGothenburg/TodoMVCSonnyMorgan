@@ -5,7 +5,7 @@ const footerButton = {
     COMPLETED: "completed"
 };
 //Start Default option of "ALL"
-let choosenFooterButton = footerButton.ALL;
+let chosenFooterButton = footerButton.ALL;
 
 // creates ul element
 function createList() {
@@ -174,7 +174,7 @@ function activeButtonEventListener() {
 }
 
 function activeButtonClick(){
-        choosenFooterButton = footerButton.ACTIVE;
+        chosenFooterButton = footerButton.ACTIVE;
 
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
@@ -196,7 +196,7 @@ function allButtonEventListener() {
 }
 
 function allButtonClick(){
-    choosenFooterButton = footerButton.ALL;
+    chosenFooterButton = footerButton.ALL;
         let allList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < allList.length; i++) {
             allList[i].parentNode.parentNode.style.display = "block";
@@ -225,7 +225,7 @@ function removeButtonEventListener() {
                 let toggleAll = document.querySelector("#button-toggle-all");
                 toggleAll.style.display = "none";
                 let footer = document.querySelector("#todo-footer");
-                footer.style.display = "none";
+                footer.style.visibility = "hidden"
                 let textBox = document.querySelector("#new-todo-textbox");
                 textBox.style.paddingLeft = "82px";
             }
@@ -242,7 +242,7 @@ function inActiveButtonEventListener() {
 }
 
 function inActiveButtonClick(){
-    choosenFooterButton = footerButton.COMPLETED;
+    chosenFooterButton = footerButton.COMPLETED;
     let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
     for (i = 0; i < inActiveList.length; i++) {
         if (inActiveList[i].checked == false) {               
@@ -356,17 +356,17 @@ function persistantSort() {
     let active = document.querySelector("#active");
     let completed = document.querySelector("#completed");
 
-    if (choosenFooterButton == footerButton.ALL) {
+    if (chosenFooterButton == footerButton.ALL) {
         all.style.textDecoration = 'underline';
         active.style.textDecoration = 'none';
         completed.style.textDecoration = 'none';
         allButtonClick();
-    } else if (choosenFooterButton == footerButton.ACTIVE) {
+    } else if (chosenFooterButton == footerButton.ACTIVE) {
         all.style.textDecoration = 'none';
         active.style.textDecoration = 'underline';
         completed.style.textDecoration = 'none';
         activeButtonClick();
-    } else if (choosenFooterButton == footerButton.COMPLETED) {
+    } else if (chosenFooterButton == footerButton.COMPLETED) {
         all.style.textDecoration = 'none';
         active.style.textDecoration = 'none';
         completed.style.textDecoration = 'underline';
