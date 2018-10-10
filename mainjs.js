@@ -30,6 +30,7 @@ function addToList() {
     let label = document.createElement("label");
     let button = document.createElement("input");
     let textbox = document.querySelector("#new-todo-textbox");
+    
     button.type = "button";
     button.value = "X";
     button.className = "deleteButton";
