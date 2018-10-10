@@ -119,7 +119,7 @@ h1 {
 
 }
 
-.deleteButton{
+.deleteButton {
     color: palevioletred;
     border: none;
     background: transparent;
@@ -128,7 +128,7 @@ h1 {
     font-weight: bold;
 }
 
-.deleteButton:hover{
+.deleteButton:hover {
     color: crimson;
 }
 
@@ -144,9 +144,11 @@ h1 {
     float: right;
     margin-right: 10px;
 }
-#clearCompleted:hover{
+
+#clearCompleted:hover {
     text-decoration: underline;
 }
+
 #itemsLeft {
     float: left;
     margin-left: 10px
@@ -163,7 +165,7 @@ input[type="checkbox"] {
 
 }
 
-input:checked+label{
+input:checked+label {
     text-decoration: line-through;
     color: grey;
 }
@@ -172,15 +174,18 @@ input.deleteButton {
     display: none;
 }
 
-#all:hover{
+#all:hover {
     cursor: pointer;
 }
-#active{
+
+#active {
     cursor: pointer;
 }
-#completed{
+
+#completed {
     cursor: pointer;
 }
+
 label:hover+input.deleteButton {
     display: block;
 }
@@ -201,102 +206,114 @@ ul>li:nth-child(1) {
 
 @media (max-width: 548px) {
 
-.todoApp{
-    width: auto;
-}
-.todoHeader{
-    width: auto;
-}
-#textboxBarHeader{
-   width: auto;
-}
-#todoTextboxBar{
-    width: auto;
-}
-
-#newTodoTextbox{
-    width: auto;
-}
-#todoApp-extension{
-    width: auto;
-}
-#todoFooter{
-    width: auto;
-}
-
-#todoFooter button{
-    width: auto;
-}
-
-#todoApp-extension ul {
-    width: auto;
-}
-
-
-#todoApp-extension ul li div {
-    width: auto;
-}
-
-#todoApp-extension ul li div checkbox {
-    width: auto;
-}
-
-#todoApp-extension ul li div label {
-    width: auto;
-
-}
-
-#all {
-    margin-left: 5px;
-}
-
-}
-@media (max-width: 430px){
-    .todoApp{
-        min-width: 400.2px; 
-    }
-    .todoHeader{
-        width: 400.2px;
-    }
-    #textboxBarHeader{
-       width: 400.2px;
-    }
-    #todoTextboxBar{
-        width: 380.2px;
-    }
-    
-    #newTodoTextbox{
-        width: 317.8px;
-    }
-    #todoApp-extension{
-        width:  400.2px;
-    }
-    #todoFooter{
-        width:  400.2px;
-    }
-    
-    #todoFooter button{
+    .todoApp {
         width: auto;
     }
-    
+
+    .todoHeader {
+        width: auto;
+    }
+
+    #textboxBarHeader {
+        width: auto;
+    }
+
+    #todoTextboxBar {
+        width: auto;
+    }
+
+    #newTodoTextbox {
+        width: auto;
+    }
+
+    #todoApp-extension {
+        width: auto;
+    }
+
+    #todoFooter {
+        width: auto;
+    }
+
+    #todoFooter button {
+        width: auto;
+    }
+
     #todoApp-extension ul {
         width: auto;
     }
-    
-    
+
+
     #todoApp-extension ul li div {
         width: auto;
     }
-    
+
     #todoApp-extension ul li div checkbox {
         width: auto;
     }
-    
+
     #todoApp-extension ul li div label {
         width: auto;
-    
+
     }
-    .deleteButton{
+
+    #all {
+        margin-left: 5px;
+    }
+
+}
+
+@media (max-width: 430px) {
+    .todoApp {
+        min-width: 400.2px;
+    }
+
+    .todoHeader {
+        width: 400.2px;
+    }
+
+    #textboxBarHeader {
+        width: 400.2px;
+    }
+
+    #todoTextboxBar {
+        width: 380.2px;
+    }
+
+    #newTodoTextbox {
+        width: 317.8px;
+    }
+
+    #todoApp-extension {
+        width: 400.2px;
+    }
+
+    #todoFooter {
+        width: 400.2px;
+    }
+
+    #todoFooter button {
+        width: auto;
+    }
+
+    #todoApp-extension ul {
+        width: auto;
+    }
+
+
+    #todoApp-extension ul li div {
+        width: auto;
+    }
+
+    #todoApp-extension ul li div checkbox {
+        width: auto;
+    }
+
+    #todoApp-extension ul li div label {
+        width: auto;
+
+    }
+
+    .deleteButton {
         margin-right: 20px;
     }
 }
@@ -306,46 +323,52 @@ ul>li:nth-child(1) {
 @media (min-width: 1000px) {
 
     .todoApp {
-       
+
         width: auto;
         margin: 20px;
         background: white;
         border-radius: 5px;
         box-shadow: 10px 10px 0 rgba(14, 124, 124, 0.1);
-    
-    
+
+
     }
+
     #todoTextboxBar {
         width: auto;
     }
+
     #newTodoTextbox {
-       
+
         width: auto;
-     
-    
+
+
     }
+
     #todoApp-extension ul li div {
-    
+
         width: auto;
         margin: auto;
     }
-    #todoApp-extension ul {      
+
+    #todoApp-extension ul {
         width: auto;
 
     }
-  
-    #todoFooter {       
+
+    #todoFooter {
         display: block;
         display: none;
-    
+
     }
+
     #todoFooter button {
         height: 30px;
         font-size: 1.2em;
         margin-bottom: 3px;
         margin-top: 3px;
     }
-    #itemsLeft{
+
+    #itemsLeft {
         font-size: 1.5em
     }
 
