@@ -1,7 +1,7 @@
 Documentation for the TodoMVC project by Sonny Aasen and Morgan Berglund
 	
 
-	Our project is built using standard HTML, CSS, JavaScript. 
+	Our project is built using standard HTML, CSS and JavaScript. 
 	No frameworks were used during the development.
 	
 
