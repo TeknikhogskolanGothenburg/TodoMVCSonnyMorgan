@@ -78,7 +78,6 @@ function contentEditableOnDubleClick(label) {
 
     });
     
-<<<<<<< HEAD
     textbox.value = "";
     countItemsLeftToDo();
     toggleTodoFooter();
@@ -86,8 +85,6 @@ function contentEditableOnDubleClick(label) {
     persistantSort();
     
 
-=======
->>>>>>> d648c622e6e1219022bfe7859994aebb1a54ed2f
 }
 
 function toggleAllButtonEventListener() {
