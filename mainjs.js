@@ -57,12 +57,11 @@ function addToList() {
     toggleTodoFooter();
     fullOpacityToggleAllButton();
     persistantSort();
-    contentEditableOnDubleClick(label);
+    contentEditableOnDoubleClick(label);
     
-
 }
 
-function contentEditableOnDubleClick(label) {
+function contentEditableOnDoubleClick(label) {
     label.addEventListener("dblclick",()=>{
         label.contentEditable='true';
         label.focus();
