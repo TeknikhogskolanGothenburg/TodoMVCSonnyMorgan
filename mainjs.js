@@ -66,7 +66,6 @@ function addToList() {
     });
     
     textbox.value = "";
-   // doubleClickLableEventListener();
     countItemsLeftToDo();
     toggleTodoFooter();
     fullOpacityToggleAllButton();
@@ -200,28 +199,28 @@ function removeButtonEventListener() {
                 let textBox = document.querySelector("#newTodoTextbox");
                 textBox.style.paddingLeft = "82px";
             }
-
         }
-
     });
-
-
 }
 
 
 function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
-        choosenFooterButton = footerButton.COMPLETED;
-        let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
-        for (i = 0; i < inActiveList.length; i++) {
-            if (inActiveList[i].checked == false) {               
-                inActiveList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
-            } else {
-                inActiveList[i].parentNode.parentNode.style.display = "block";
-            }
-        }
+        inActiveButtonClick();
     });
+}
+
+function inActiveButtonClick(){
+    choosenFooterButton = footerButton.COMPLETED;
+    let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
+    for (i = 0; i < inActiveList.length; i++) {
+        if (inActiveList[i].checked == false) {               
+            inActiveList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+        } else {
+            inActiveList[i].parentNode.parentNode.style.display = "block";
+        }
+    }
 }
 
 function deleteInActiveButtonEventListener() {
@@ -338,12 +337,12 @@ function persistantSort() {
         all.style.textDecoration = 'none';
         active.style.textDecoration = 'underline';
         completed.style.textDecoration = 'none';
-        active.click();
+        activeButtonClick();
     } else if (choosenFooterButton == footerButton.COMPLETED) {
         all.style.textDecoration = 'none';
         active.style.textDecoration = 'none';
         completed.style.textDecoration = 'underline';
-        completed.click();
+        inActiveButtonClick();
     }
 
 }
