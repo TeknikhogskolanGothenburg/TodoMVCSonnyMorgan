@@ -19,7 +19,6 @@ function createList() {
     appFooter.style.display = "block";
     let toggleAll = document.querySelector("#btnToggleAll");
     toggleAll.style.display = "block";
-    //let textBox = document.querySelector("#btnToggleAll");
     const clearCompleted = document.querySelector("#clearCompleted");
     clearCompleted.style.display = "none";
 
@@ -42,13 +41,6 @@ function addToList() {
     checkbox.className = "checkboxes";
 
     let newListContent = textbox.value;
-    let result = "";
-    /*
-    while (newListContent.length > 0) {
-        result += newListContent.substring(0, 30) + '\n';
-        newListContent = newListContent.substring(30);
-    }
-    */
     label.textContent = newListContent;
     
     li.className = "listItem";
@@ -58,6 +50,7 @@ function addToList() {
     div1.appendChild(label);
     div1.appendChild(button);
     parent.appendChild(li);
+    
     label.addEventListener("dblclick",()=>{
         label.contentEditable='true';
         label.style.outline = "solid";
@@ -70,9 +63,10 @@ function addToList() {
             }
         });
 
-    })
+    });
+    
     textbox.value = "";
-    doubleClickLableEventListener();
+   // doubleClickLableEventListener();
     countItemsLeftToDo();
     toggleTodoFooter();
     fullOpacityToggleAllButton();
@@ -150,9 +144,7 @@ function activeButtonEventListener() {
 
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
-            if (activeList[i].checked == true) {
-                // commented line below is for deleting the <li> rather than just hiding
-                // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
+            if (activeList[i].checked == true) {              
                 activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
             } else {
                 activeList[i].parentNode.parentNode.style.display = "block";
@@ -165,19 +157,23 @@ function activeButtonEventListener() {
 // all button in the footer functionality
 function allButtonEventListener() {
     let all = document.querySelector("#all");
+    
     all.addEventListener("click", event => {
-        choosenFooterButton = footerButton.ALL;
+        allButtonClick();
+    });
+}
+
+function allButtonClick(){
+    choosenFooterButton = footerButton.ALL;
         let allList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < allList.length; i++) {
             allList[i].parentNode.parentNode.style.display = "block";
         }
-    });
 }
 
 // remove button in the list functionality
 function removeButtonEventListener() {
     let ul = document.querySelector("ul");
-    //let ulParent = document.querySelector("#todoApp-extension");
 
     // add eventlister to <ul> and add some event delegation
     // event.target is the child element that triggered the event <li> in the case of a <ul>
@@ -216,9 +212,7 @@ function inActiveButtonEventListener() {
         choosenFooterButton = footerButton.COMPLETED;
         let inActiveList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < inActiveList.length; i++) {
-            if (inActiveList[i].checked == false) {
-                // commented line below is for deleting the <li> rather than just hiding
-                // activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
+            if (inActiveList[i].checked == false) {               
                 inActiveList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
             } else {
                 inActiveList[i].parentNode.parentNode.style.display = "block";
@@ -233,9 +227,7 @@ function deleteInActiveButtonEventListener() {
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
             if (activeList[i].checked == true) {
-                // commented line below is for deleting the <li> rather than just hiding
-                activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);
-                //activeList[i].parentNode.parentNode.style.display = "none"; // set <li> parent of activeList[i] to display:none
+                activeList[i].parentNode.parentNode.parentNode.removeChild(activeList[i].parentNode.parentNode);               
             }
         }
     });
@@ -338,7 +330,7 @@ function persistantSort() {
         all.style.textDecoration = 'underline';
         active.style.textDecoration = 'none';
         completed.style.textDecoration = 'none';
-        all.click();
+        allButtonClick();
     } else if (choosenFooterButton == footerButton.ACTIVE) {
         all.style.textDecoration = 'none';
         active.style.textDecoration = 'underline';
@@ -352,21 +344,6 @@ function persistantSort() {
     }
 
 }
-/*
-function doubleClickLableEventListener()
-{
-    const inputLabel = querySelectorAll('div > label');
-  //  const wholeAppArea = document.querySelectorAll('.todoApp');
-  //  wholeAppArea.forEach(area => area.addEventListener('click', event =>
-
-    inputLabel.addEventListener('dblclick', event =>{
-        inputLabel.contentEditable='true';
-        
-    });
-
-    
-}
-*/
 
 updateOnClick();
 deleteInActiveButtonEventListener();
