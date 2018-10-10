@@ -54,6 +54,7 @@ function addToList() {
     label.addEventListener("dblclick",()=>{
         label.contentEditable='true';
         label.style.outline = "solid";
+        label.style.outlineColor= "darkGrey";
         label.addEventListener("keypress", (e) => {
             let key = e.which || e.keyCode;
             if (key ===13) {
