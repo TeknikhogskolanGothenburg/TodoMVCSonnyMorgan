@@ -7,9 +7,6 @@ const footerButton = {
 //Start Default option of "ALL"
 let choosenFooterButton = footerButton.ALL;
 
-
-
-
 // creates ul element
 function createList() {
     let parent = document.querySelector("#todoApp-extension");
@@ -59,6 +56,36 @@ function addToList() {
     persistantSort();
     contentEditableOnDoubleClick(label);
     
+}
+
+// remove button in the list functionality
+function removeButtonEventListener() {
+    let ul = document.querySelector("ul");
+
+    // add eventlister to <ul> and add some event delegation
+    // event.target is the child element that triggered the event <li> in the case of a <ul>
+    // make sure the clicked element in the <li> is a button
+    // delete <li> based off of the event.target
+    ul.addEventListener("click", event => {
+        let selectedElementTagName = event.target.tagName;
+        let selectedElement = event.target;
+
+        if (selectedElementTagName == "INPUT" && selectedElement.type == "button") {
+
+            selectedElement.parentNode.parentNode.parentNode.removeChild(selectedElement.parentNode.parentNode);
+            let listExists = Array.from(document.querySelectorAll("li"));
+            if (listExists.length <= 0) {
+                let parent = document.querySelector("#todoApp-extension");
+                parent.removeChild(ul);
+                let toggleAll = document.querySelector("#btnToggleAll");
+                toggleAll.style.display = "none";
+                let footer = document.querySelector("#todoFooter");
+                footer.style.display = "none";
+                let textBox = document.querySelector("#newTodoTextbox");
+                textBox.style.paddingLeft = "82px";
+            }
+        }
+    });
 }
 
 function contentEditableOnDoubleClick(label) {
@@ -176,37 +203,6 @@ function allButtonClick(){
         }
 }
 
-// remove button in the list functionality
-function removeButtonEventListener() {
-    let ul = document.querySelector("ul");
-
-    // add eventlister to <ul> and add some event delegation
-    // event.target is the child element that triggered the event <li> in the case of a <ul>
-    // make sure the clicked element in the <li> is a button
-    // delete <li> based off of the event.target
-    ul.addEventListener("click", event => {
-        let selectedElementTagName = event.target.tagName;
-        let selectedElement = event.target;
-
-        if (selectedElementTagName == "INPUT" && selectedElement.type == "button") {
-
-            selectedElement.parentNode.parentNode.parentNode.removeChild(selectedElement.parentNode.parentNode);
-            let listExists = Array.from(document.querySelectorAll("li"));
-            if (listExists.length <= 0) {
-                let parent = document.querySelector("#todoApp-extension");
-                parent.removeChild(ul);
-                let toggleAll = document.querySelector("#btnToggleAll");
-                toggleAll.style.display = "none";
-                let footer = document.querySelector("#todoFooter");
-                footer.style.display = "none";
-                let textBox = document.querySelector("#newTodoTextbox");
-                textBox.style.paddingLeft = "82px";
-            }
-        }
-    });
-}
-
-
 function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
@@ -323,8 +319,6 @@ function fullOpacityToggleAllButton() {
         toggleAllBtnImg.style.visibility = 'hidden';
     }
 }
-
-
 
 function persistantSort() {
     let all = document.querySelector("#all");
