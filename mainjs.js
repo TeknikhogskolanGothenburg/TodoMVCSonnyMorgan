@@ -203,7 +203,6 @@ function allButtonClick(){
         }
 }
 
-<<<<<<< HEAD
 // remove button in the list functionality
 function removeButtonEventListener() {
     let ul = document.querySelector("ul");
@@ -235,8 +234,6 @@ function removeButtonEventListener() {
 }
 
 
-=======
->>>>>>> df1f753f3de0d6e036d32e06f5df06e282e1fc00
 function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
     inActive.addEventListener("click", event => {
