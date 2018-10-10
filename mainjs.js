@@ -53,11 +53,11 @@ function addToList() {
     
  
     textbox.value = "";
-    contentEditableOnDubleClick(label);
     countItemsLeftToDo();
     toggleTodoFooter();
     fullOpacityToggleAllButton();
     persistantSort();
+    contentEditableOnDubleClick(label);
     
 
 }
