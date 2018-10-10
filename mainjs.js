@@ -269,7 +269,7 @@ function deleteInActiveButtonEventListener() {
 //Things to be altered constantly on click
 function updateOnClick() {
     const wholeAppArea = document.querySelectorAll('.todo-app');
-    wholeAppArea.forEach(area => area.addEventListener('click', () =>
+    wholeAppArea.forEach(area => area.addEventListener('click', event =>
         countItemsLeftToDo() |
         toggleVisibilityClearCompleteButton() |
         toggleTodoFooter() |
