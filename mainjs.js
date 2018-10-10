@@ -109,7 +109,7 @@ function contentEditableOnDoubleClick(label) {
 function toggleAllButtonEventListener() {
     let toggleAll = document.querySelector("#button-toggle-all");
 
-    toggleAll.addEventListener("click", event => {
+    toggleAll.addEventListener("click", () => {
         let checkAllStatus = false;
         let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < checkboxes.length; i++) {
@@ -169,7 +169,7 @@ function textBoxEventListener() {
 
 function activeButtonEventListener() {
     let active = document.querySelector("#active");
-    active.addEventListener("click", event => {
+    active.addEventListener("click", () => {
         activeButtonClick();
     });
 }
@@ -191,7 +191,7 @@ function activeButtonClick(){
 function allButtonEventListener() {
     let all = document.querySelector("#all");
     
-    all.addEventListener("click", event => {
+    all.addEventListener("click", () => {
         allButtonClick();
     });
 }
@@ -237,7 +237,7 @@ function removeButtonEventListener() {
 
 function inActiveButtonEventListener() {
     let inActive = document.querySelector("#completed");
-    inActive.addEventListener("click", event => {
+    inActive.addEventListener("click", () => {
         inActiveButtonClick();
     });
 }
@@ -256,7 +256,7 @@ function inActiveButtonClick(){
 
 function deleteInActiveButtonEventListener() {
     let active = document.querySelector("#clear-completed");
-    active.addEventListener("click", event => {
+    active.addEventListener("click", () => {
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
             if (activeList[i].checked == true) {
@@ -269,7 +269,7 @@ function deleteInActiveButtonEventListener() {
 //Things to be altered constantly on click
 function updateOnClick() {
     const wholeAppArea = document.querySelectorAll('.todo-app');
-    wholeAppArea.forEach(area => area.addEventListener('click', event =>
+    wholeAppArea.forEach(area => area.addEventListener('click', () =>
         countItemsLeftToDo() |
         toggleVisibilityClearCompleteButton() |
         toggleTodoFooter() |
