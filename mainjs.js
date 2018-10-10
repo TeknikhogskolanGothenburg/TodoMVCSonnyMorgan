@@ -12,27 +12,27 @@ let choosenFooterButton = footerButton.ALL;
 
 // creates ul element
 function createList() {
-    let parent = document.querySelector("#todoApp-extension");
+    let parent = document.querySelector("#todo-app-extension");
     let ul = document.createElement("ul");
     parent.appendChild(ul);
-    const appFooter = document.querySelector("#todoFooter");
+    const appFooter = document.querySelector("#todo-footer");
     appFooter.style.display = "block";
-    let toggleAll = document.querySelector("#btnToggleAll");
+    let toggleAll = document.querySelector("#button-toggle-all");
     toggleAll.style.display = "block";
-    const clearCompleted = document.querySelector("#clearCompleted");
+    const clearCompleted = document.querySelector("#clear-completed");
     clearCompleted.style.display = "none";
 
 }
 
 // creates li element
 function addToList() {
-    let parent = document.querySelector("#todoApp-extension ul");
+    let parent = document.querySelector("#todo-app-extension ul");
     let li = document.createElement("li");
     let div1 = document.createElement("div");
     let checkbox = document.createElement('input');
     let label = document.createElement("label");
     let button = document.createElement("input");
-    let textbox = document.querySelector("#newTodoTextbox");
+    let textbox = document.querySelector("#new-todo-textbox");
     button.type = "button";
     button.value = "X";
     button.className = "deleteButton";
@@ -79,7 +79,7 @@ function contentEditableOnDoubleClick(label) {
 }
 
 function toggleAllButtonEventListener() {
-    let toggleAll = document.querySelector("#btnToggleAll");
+    let toggleAll = document.querySelector("#button-toggle-all");
 
     toggleAll.addEventListener("click", event => {
         let checkAllStatus = false;
@@ -96,14 +96,14 @@ function toggleAllButtonEventListener() {
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = false;
             }
-            let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+            let toggleAllBtnImg = document.querySelector("#button-toggle-all img");
             toggleAllBtnImg.style.opacity = "0.5";
 
         } else {
             for (i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = true;
             }
-            let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+            let toggleAllBtnImg = document.querySelector("#button-toggle-all img");
             toggleAllBtnImg.style.opacity = "1";
         }
     });
@@ -111,7 +111,7 @@ function toggleAllButtonEventListener() {
 
 // function adds eventlistener to the textbox enter keypress event
 function textBoxEventListener() {
-    let textBox = document.querySelector("#newTodoTextbox");
+    let textBox = document.querySelector("#new-todo-textbox");
 
     textBox.addEventListener("keypress", event => {
         // make sure you cant add empty string to list
@@ -120,7 +120,7 @@ function textBoxEventListener() {
         if (textBox.value != !!textBox.value.trim()) {
             var key = event.which || event.keyCode;
             if (key == 13) {
-                let ulExists = document.querySelector("#todoApp-extension ul");
+                let ulExists = document.querySelector("#todo-app-extension ul");
                 if (ulExists == null) {
                     createList();
                     addToList();
@@ -193,13 +193,13 @@ function removeButtonEventListener() {
             selectedElement.parentNode.parentNode.parentNode.removeChild(selectedElement.parentNode.parentNode);
             let listExists = Array.from(document.querySelectorAll("li"));
             if (listExists.length <= 0) {
-                let parent = document.querySelector("#todoApp-extension");
+                let parent = document.querySelector("#todo-app-extension");
                 parent.removeChild(ul);
-                let toggleAll = document.querySelector("#btnToggleAll");
+                let toggleAll = document.querySelector("#button-toggle-all");
                 toggleAll.style.display = "none";
-                let footer = document.querySelector("#todoFooter");
+                let footer = document.querySelector("#todo-footer");
                 footer.style.display = "none";
-                let textBox = document.querySelector("#newTodoTextbox");
+                let textBox = document.querySelector("#new-todo-textbox");
                 textBox.style.paddingLeft = "82px";
             }
         }
@@ -227,7 +227,7 @@ function inActiveButtonClick(){
 }
 
 function deleteInActiveButtonEventListener() {
-    let active = document.querySelector("#clearCompleted");
+    let active = document.querySelector("#clear-completed");
     active.addEventListener("click", event => {
         let activeList = Array.from(document.querySelectorAll(".checkboxes"));
         for (i = 0; i < activeList.length; i++) {
@@ -241,7 +241,7 @@ function deleteInActiveButtonEventListener() {
 //Things to be altered constantly on click
 
 function updateOnClick() {
-    const wholeAppArea = document.querySelectorAll('.todoApp');
+    const wholeAppArea = document.querySelectorAll('.todo-app');
     wholeAppArea.forEach(area => area.addEventListener('click', event =>
         countItemsLeftToDo() |
         toggleVisibilityClearCompleteButton() |
@@ -254,7 +254,7 @@ function updateOnClick() {
 
 function toggleTodoFooter() {
     const activeList = Array.from(document.querySelectorAll(".checkboxes"));
-    const appFooter = document.querySelector("#todoFooter");
+    const appFooter = document.querySelector("#todo-footer");
 
     if (activeList.length == 0) {
         appFooter.style.display = "none";
@@ -266,7 +266,7 @@ function toggleTodoFooter() {
 
 function countItemsLeftToDo() {
 
-    const lableForResult = document.querySelector("#itemsLeft");
+    const lableForResult = document.querySelector("#items-left");
     const activeList = Array.from(document.querySelectorAll(".checkboxes"));
     let result = 0;
     for (i = 0; i < activeList.length; i++) {
@@ -288,7 +288,7 @@ function toggleVisibilityClearCompleteButton() {
         }
     }
 
-    const clearCompleted = document.querySelector("#clearCompleted");
+    const clearCompleted = document.querySelector("#clear-completed");
     if (checkedBoxes == 0) {
         clearCompleted.style.display = "none";
     } else {
@@ -297,7 +297,7 @@ function toggleVisibilityClearCompleteButton() {
 }
 
 function fullOpacityToggleAllButton() {
-    let toggleAllBtnImg = document.querySelector("#btnToggleAll img");
+    let toggleAllBtnImg = document.querySelector("#button-toggle-all img");
     let checkboxes = Array.from(document.querySelectorAll(".checkboxes"));
 
     for (i = 0; i < checkboxes.length; i++) {

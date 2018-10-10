@@ -7,7 +7,7 @@ body {
 
 }
 
-.todoApp {
+.todo-app {
     width: 550px;
     margin: auto;
     background: white;
@@ -28,11 +28,11 @@ h1 {
     margin-bottom: 20px;
 }
 
-#textboxBarHeader {
+#textbox-barheader {
     text-align: center;
 }
 
-#todoTextboxBar {
+#todo-textboxbar {
     display: flex;
     height: 65px;
     width: 540px;
@@ -40,7 +40,7 @@ h1 {
     margin-bottom: 0;
 }
 
-#newTodoTextbox {
+#new-todo-textbox {
     height: 59.1px;
     width: 100%;
     font-size: 24px;
@@ -53,13 +53,13 @@ h1 {
 
 }
 
-#btnToggleAll {
+#button-toggle-all {
     width: 50px;
     outline: none;
     display: none;
 }
 
-#btnToggleAll img {
+#button-toggle-all img {
     display: block;
     margin-top: 30%;
     margin-bottom: 70%;
@@ -68,23 +68,23 @@ h1 {
     opacity: 0.5;
 }
 
-.infoFooter {
+.info-footer {
     font-size: 12px;
     opacity: 0.4;
     text-align: center;
     margin-top: 40px;
 }
 
-#newTodoTextbox::placeholder {
+#new-todo-textbox::placeholder {
     color: gray;
     opacity: 0.2;
 }
 
-#todoApp-extension {
+#todo-app-extension {
     text-align: center;
 }
 
-#todoApp-extension ul {
+#todo-app-extension ul {
     list-style: none;
     width: 550px;
     height: auto;
@@ -93,20 +93,20 @@ h1 {
 }
 
 
-#todoApp-extension ul li div {
+#todo-app-extension ul li div {
     display: flex;
 
     width: 550px;
     margin: auto;
 }
 
-#todoApp-extension ul li div checkbox {
+#todo-app-extension ul li div checkbox {
     height: 65px;
     flex: 1;
     outline: none;
 }
 
-#todoApp-extension ul li div label {
+#todo-app-extension ul li div label {
     word-break: break-all;
     padding: 15px 15px 15px 25px;
     flex: 8;
@@ -135,22 +135,22 @@ h1 {
 
 
 
-#todoFooter {
+#todo-footer {
     display: block;
     display: none;
 
 }
 
-#clearCompleted {
+#clear-completed {
     float: right;
     margin-right: 10px;
 }
 
-#clearCompleted:hover {
+#clear-completed:hover {
     text-decoration: underline;
 }
 
-#itemsLeft {
+#items-left {
     float: left;
     margin-left: 10px
 }
@@ -207,52 +207,52 @@ ul>li:nth-child(1) {
 
 @media (max-width: 548px) {
 
-    .todoApp {
+    .todo-app {
         width: auto;
     }
 
-    .todoHeader {
+    .todo-header {
         width: auto;
     }
 
-    #textboxBarHeader {
+    #textbox-barheader {
         width: auto;
     }
 
-    #todoTextboxBar {
+    #todo-textboxbar {
         width: auto;
     }
 
-    #newTodoTextbox {
+    #new-todo-textbox {
         width: 100%;
     }
 
-    #todoApp-extension {
+    #todo-app-extension {
         width: auto;
     }
 
-    #todoFooter {
+    #todo-footer {
         width: auto;
     }
 
-    #todoFooter button {
+    #todo-footer button {
         width: auto;
     }
 
-    #todoApp-extension ul {
+    #todo-app-extension ul {
         width: auto;
     }
 
 
-    #todoApp-extension ul li div {
+    #todo-app-extension ul li div {
         width: auto;
     }
 
-    #todoApp-extension ul li div checkbox {
+    #todo-app-extension ul li div checkbox {
         width: auto;
     }
 
-    #todoApp-extension ul li div label {
+    #todo-app-extension ul li div label {
         width: auto;
 
     }
@@ -264,56 +264,56 @@ ul>li:nth-child(1) {
 }
 
 @media (max-width: 430px) {
-    .todoApp {
+    .todo-app {
         min-width: 400.2px;
     }
 
-    #btnToggleAll img {
+    #button-toggle-all img {
         margin-left: 30%;
         margin-right: 70%;
     }
-    .todoHeader {
+    .todo-header {
         width: 400.2px;
     }
 
-    #textboxBarHeader {
+    #textbox-barheader {
         width: 400.2px;
     }
 
-    #todoTextboxBar {
+    #todo-textboxbar {
         width: 380.2px;
     }
 
-    #newTodoTextbox {
+    #new-todo-textbox {
         width: 100%;
     }
 
-    #todoApp-extension {
+    #todo-app-extension {
         width: 400.2px;
     }
 
-    #todoFooter {
+    #todo-footer {
         width: 400.2px;
     }
 
-    #todoFooter button {
+    #todo-footer button {
         width: auto;
     }
 
-    #todoApp-extension ul {
+    #todo-app-extension ul {
         width: auto;
     }
 
 
-    #todoApp-extension ul li div {
+    #todo-app-extension ul li div {
         width: auto;
     }
 
-    #todoApp-extension ul li div checkbox {
+    #todo-app-extension ul li div checkbox {
         width: auto;
     }
 
-    #todoApp-extension ul li div label {
+    #todo-app-extension ul li div label {
         width: auto;
 
     }
@@ -327,7 +327,7 @@ ul>li:nth-child(1) {
 
 @media (min-width: 1000px) {
 
-    .todoApp {
+    .todo-app {
 
         width: auto;
         margin: 20px;
@@ -338,42 +338,42 @@ ul>li:nth-child(1) {
 
     }
 
-    #todoTextboxBar {
+    #todo-textboxbar {
         width: auto;
     }
 
-    #newTodoTextbox {
+    #new-todo-textbox {
 
         width: 100%;
 
 
     }
 
-    #todoApp-extension ul li div {
+    #todo-app-extension ul li div {
 
         width: auto;
         margin: auto;
     }
 
-    #todoApp-extension ul {
+    #todo-app-extension ul {
         width: auto;
 
     }
 
-    #todoFooter {
+    #todo-footer {
         display: block;
         display: none;
 
     }
 
-    #todoFooter button {
+    #todo-footer button {
         height: 30px;
         font-size: 1.2em;
         margin-bottom: 3px;
         margin-top: 3px;
     }
 
-    #itemsLeft {
+    #items-left {
         font-size: 1.5em
     }
 
