@@ -51,8 +51,21 @@ function addToList() {
     div1.appendChild(button);
     parent.appendChild(li);
     
+ 
+    textbox.value = "";
+    contentEditableOnDubleClick(label);
+    countItemsLeftToDo();
+    toggleTodoFooter();
+    fullOpacityToggleAllButton();
+    persistantSort();
+    
+
+}
+
+function contentEditableOnDubleClick(label) {
     label.addEventListener("dblclick",()=>{
         label.contentEditable='true';
+        label.focus();
         label.style.outline = "solid";
         label.style.outlineColor= "darkGrey";
         label.addEventListener("keypress", (e) => {
@@ -65,16 +78,7 @@ function addToList() {
 
     });
     
-    textbox.value = "";
-   // doubleClickLableEventListener();
-    countItemsLeftToDo();
-    toggleTodoFooter();
-    fullOpacityToggleAllButton();
-    persistantSort();
-    
-
 }
-
 
 function toggleAllButtonEventListener() {
     let toggleAll = document.querySelector("#btnToggleAll");
