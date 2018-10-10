@@ -235,7 +235,6 @@ function deleteInActiveButtonEventListener() {
 }
 
 //Things to be altered constantly on click
-
 function updateOnClick() {
     const wholeAppArea = document.querySelectorAll('.todoApp');
     wholeAppArea.forEach(area => area.addEventListener('click', event =>
@@ -320,6 +319,7 @@ function fullOpacityToggleAllButton() {
     }
 }
 
+// this function is used to refresh the app based on selected footer button
 function persistantSort() {
     let all = document.querySelector("#all");
     let active = document.querySelector("#active");
